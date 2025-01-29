@@ -116,11 +116,11 @@
 	(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "0f98fb9b-bc85-4d67-929b-b247d3e76a69")
-		(at 71 44.08 90)
+		(at 71.5 44.08 90)
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R6"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "9f59e9ef-5fb6-4683-a9c5-f6f8dc65a107")
 			(effects
@@ -395,7 +395,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R2"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "46cbbf2e-ffd6-4776-a55c-7c6bc80fcd8a")
 			(effects
@@ -670,7 +670,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R4"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "da5f5460-299d-46f1-995e-555eeabff28b")
 			(effects
@@ -945,7 +945,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R3"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "9326d872-cc82-4967-9376-5740a9c29582")
 			(effects
@@ -1220,7 +1220,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R1"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "f6a1382c-a954-45de-a7dc-9bce897fd631")
 			(effects
@@ -1495,7 +1495,7 @@
 		(descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
 		(property "Reference" "R5"
-			(at 5.08 -2.37 90)
+			(at 5.08 0 90)
 			(layer "F.SilkS")
 			(uuid "8cd37a1c-377c-4d08-beeb-3e03ea01ea40")
 			(effects
@@ -1842,8 +1842,18 @@
 			(uuid "34749b94-2081-4fb9-9f09-e3a4b5f99294")
 		)
 		(fp_line
-			(start 8.89 1.18)
+			(start -4 1.18)
 			(end -8.89 1.18)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "a4494a24-413c-4966-a730-9934df09a1a5")
+		)
+		(fp_line
+			(start 8.89 1.18)
+			(end 4 1.18)
 			(stroke
 				(width 0.15)
 				(type solid)
@@ -1943,7 +1953,7 @@
 				(type solid)
 			)
 			(layer "F.CrtYd")
-			(uuid "d2f2e776-9689-46a0-baab-63cbfd7ff589")
+			(uuid "07f42e75-eceb-4b28-aaa5-74f485ec21b1")
 		)
 		(fp_line
 			(start 9.144 1.434)
@@ -2304,7 +2314,7 @@
 			(uuid "79bfc77b-80e7-4e98-afc0-0837ced2d5e6")
 		)
 		(fp_text user "6"
-			(at 6 -23 -90)
+			(at 6 -22.1995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "01b0d126-9995-404c-8fbe-1549b286c6b4")
@@ -2352,22 +2362,10 @@
 			)
 		)
 		(fp_text user "14"
-			(at -5.5 -30.5 -90)
+			(at -5.5 -31.6995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "230376eb-2f7e-4c04-890e-337a57febdfb")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "9"
-			(at 6 -30.5 -90)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "3481dca0-dbc8-4ae7-854a-668c470fbb89")
 			(effects
 				(font
 					(size 1 1)
@@ -2448,22 +2446,10 @@
 			)
 		)
 		(fp_text user "18"
-			(at -5.5 -20.5 -90)
+			(at -5.5 -20.1995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "911536d7-ee76-42b6-a80a-69addcd2edf4")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "2"
-			(at 6 -13 -90)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "9a68b082-89a4-4a9f-b641-dec255f62572")
 			(effects
 				(font
 					(size 1 1)
@@ -2495,20 +2481,8 @@
 				)
 			)
 		)
-		(fp_text user "10"
-			(at 5.5 -33 -90)
-			(unlocked yes)
-			(layer "F.SilkS")
-			(uuid "a90213af-7549-45df-87cd-69043db46368")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
 		(fp_text user "GND"
-			(at -5 -5 -90)
+			(at -5 -5.6995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "adda0881-cb86-48bc-b9cf-5223569eaab6")
@@ -2532,7 +2506,7 @@
 			)
 		)
 		(fp_text user "3"
-			(at 6 -15.5 -90)
+			(at 6 -15.6995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "bd32b85c-5a3d-4279-8d38-0acc90965006")
@@ -2580,7 +2554,7 @@
 			)
 		)
 		(fp_text user "17"
-			(at -5.5 -23 -90)
+			(at -5.5 -21.6995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "d441be11-c42e-46d8-b4ec-36637bac8c5a")
@@ -2604,7 +2578,7 @@
 			)
 		)
 		(fp_text user "15"
-			(at -5.5 -28 -90)
+			(at -5.5 -27.1995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "e5bb6760-8cc3-4746-a613-c9d3ae1dd995")
@@ -2652,7 +2626,7 @@
 			)
 		)
 		(fp_text user "5v"
-			(at -5.5 -10 -90)
+			(at -5.5 -8.6995 -90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "f881396b-9772-489b-9b24-35739b987077")
@@ -6328,8 +6302,8 @@
 		)
 	)
 	(gr_rect
-		(start 69 29)
-		(end 187 49)
+		(start 69.5 29)
+		(end 187.5 49)
 		(stroke
 			(width 0.2)
 			(type default)
