@@ -825,501 +825,6 @@
 				)
 			)
 		)
-		(symbol "Neko:Arduino_ProMicro"
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 20.32 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "ProMicro"
-				(at 0 17.78 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Neko:ProMicro_USBup"
-				(at 0 -30.48 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at -12.7 13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Symbol for an Arduino Pro Micro"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Arduino_ProMicro_1_0"
-				(pin bidirectional line
-					(at 12.7 -13.97 180)
-					(length 2.54)
-					(name "D10-A10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -8.89 180)
-					(length 2.54)
-					(name "D14-MISO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -6.35 180)
-					(length 2.54)
-					(name "D15-SCLK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -11.43 180)
-					(length 2.54)
-					(name "D16-MOSI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -3.81 180)
-					(length 2.54)
-					(name "D18-A0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 -1.27 180)
-					(length 2.54)
-					(name "D19-A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 3.81 0)
-					(length 2.54)
-					(name "D2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 1.27 180)
-					(length 2.54)
-					(name "D20-A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 3.81 180)
-					(length 2.54)
-					(name "D21-A3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 1.27 0)
-					(length 2.54)
-					(name "D3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -1.27 0)
-					(length 2.54)
-					(name "D4-A6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -3.81 0)
-					(length 2.54)
-					(name "D5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -6.35 0)
-					(length 2.54)
-					(name "D6-A7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -8.89 0)
-					(length 2.54)
-					(name "D7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -11.43 0)
-					(length 2.54)
-					(name "D8-A8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 -13.97 0)
-					(length 2.54)
-					(name "D9-A9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at -12.7 6.35 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at -12.7 8.89 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 12.7 11.43 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 12.7 13.97 180)
-					(length 2.54)
-					(name "RAW"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "RAW"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 8.89 180)
-					(length 2.54)
-					(name "RST"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "RST"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 11.43 0)
-					(length 2.54)
-					(name "D0-RX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "RX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -12.7 13.97 0)
-					(length 2.54)
-					(name "D1-TX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "TX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 12.7 6.35 180)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(symbol "Arduino_ProMicro_1_1"
-				(rectangle
-					(start -10.16 16.51)
-					(end 10.16 -16.51)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-		)
 		(symbol "PCM_SL_Devices:LED_3mm"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1546,6 +1051,123 @@
 				)
 			)
 		)
+		(symbol "PCM_SL_Resistors:220ohm"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "220ohm"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+				(at 0.889 -4.318 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0.508 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "220Ω, 1/4W Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "220ohm_0_1"
+				(rectangle
+					(start -2.286 0.889)
+					(end 2.286 -0.889)
+					(stroke
+						(width 0.24)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "220ohm_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 1.5)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.5)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 0 0)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "PCM_marbastlib-mx:MX_SW_solder"
 			(pin_numbers hide)
 			(pin_names
@@ -1716,18 +1338,970 @@
 			)
 		)
 	)
+	(junction
+		(at 106.68 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b9ce00c-0993-45b8-b243-0348006ed766")
+	)
+	(junction
+		(at 212.09 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "12798b4f-91a1-42c1-a615-5cc08d27c378")
+	)
+	(junction
+		(at 40.64 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1a3b1c57-6fc7-454c-adb5-0887986515d3")
+	)
+	(junction
+		(at 40.64 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1f62b957-4b06-465e-b346-f675aaaba92c")
+	)
+	(junction
+		(at 40.64 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f45175d-3819-4d46-ac60-97165ad723cf")
+	)
+	(junction
+		(at 109.22 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "683056d9-5d76-4a14-b4e9-aeae7b3f315c")
+	)
+	(junction
+		(at 166.37 96.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "68c92d8c-5256-4c33-b588-828654b072a1")
+	)
+	(junction
+		(at 212.09 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6dcd1711-02c2-449c-929b-f22eb6810ae2")
+	)
+	(junction
+		(at 212.09 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ae1e434a-f43f-4b50-bbe1-346672d87b95")
+	)
+	(junction
+		(at 212.09 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b29947af-356b-4ff0-bd97-abf5d578fe73")
+	)
+	(junction
+		(at 40.64 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e05a4f9d-16d3-45a2-a927-e4488b8b0bde")
+	)
+	(junction
+		(at 40.64 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ef011d2a-7eb1-4ee5-8d4d-c283e63a7096")
+	)
+	(junction
+		(at 212.09 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f36fe81f-80a6-482a-924d-4b95859d50b7")
+	)
+	(wire
+		(pts
+			(xy 160.02 40.64) (xy 194.31 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00f1165b-1eaf-4230-899b-1e7fb65ce73d")
+	)
+	(wire
+		(pts
+			(xy 93.98 53.34) (xy 109.22 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05fbb537-4b33-4cc4-92a5-3863b9a2529d")
+	)
+	(wire
+		(pts
+			(xy 191.77 66.04) (xy 196.85 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "08bf5dee-8905-42ce-ad78-e5ec05afce48")
+	)
+	(wire
+		(pts
+			(xy 212.09 45.72) (xy 212.09 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "091ecfb0-eaf4-4ca6-b077-8c1a83f6cd5b")
+	)
+	(wire
+		(pts
+			(xy 212.09 66.04) (xy 212.09 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e6f1224-48be-47c3-8cbb-6d4bf4caee58")
+	)
+	(wire
+		(pts
+			(xy 40.64 60.96) (xy 49.53 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "103f4699-cfda-4b8b-a65d-2604b28040a5")
+	)
+	(wire
+		(pts
+			(xy 212.09 86.36) (xy 212.09 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1664379d-a816-42fd-af50-c300f32a1be1")
+	)
+	(wire
+		(pts
+			(xy 88.9 48.26) (xy 109.22 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16e19b39-8455-4b60-b7cc-c71d35e87185")
+	)
+	(wire
+		(pts
+			(xy 40.64 86.36) (xy 49.53 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17de54dc-9394-443c-8c3a-fbfe860e3aaf")
+	)
+	(wire
+		(pts
+			(xy 106.68 110.49) (xy 40.64 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "190ee62c-2cfd-4c0c-8114-d8f93eb4cda8")
+	)
+	(wire
+		(pts
+			(xy 189.23 45.72) (xy 189.23 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "209ab41f-4a2b-4f13-9c17-c85f80eac831")
+	)
+	(wire
+		(pts
+			(xy 40.64 60.96) (xy 40.64 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29001b66-1628-417a-bf11-cb118ba672ca")
+	)
+	(wire
+		(pts
+			(xy 96.52 91.44) (xy 96.52 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a2149ce-7c90-42a5-8967-51373cc6532a")
+	)
+	(wire
+		(pts
+			(xy 212.09 55.88) (xy 212.09 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31b5cf8a-3bc9-465a-a1e6-a34733de4c58")
+	)
+	(wire
+		(pts
+			(xy 194.31 40.64) (xy 194.31 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35551968-a4e0-4b68-9e0a-a0f9da876763")
+	)
+	(wire
+		(pts
+			(xy 106.68 96.52) (xy 166.37 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37b7a1da-0eca-4f25-903b-f1c562f247f4")
+	)
+	(wire
+		(pts
+			(xy 212.09 76.2) (xy 212.09 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fddf60f-eef3-4032-ba0b-a950bac8724f")
+	)
+	(wire
+		(pts
+			(xy 40.64 86.36) (xy 40.64 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48ff0a96-867c-4b11-99b5-325bb8aada01")
+	)
+	(wire
+		(pts
+			(xy 160.02 38.1) (xy 196.85 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50cfeb0f-da9f-47fd-8691-6ece7502e6a6")
+	)
+	(wire
+		(pts
+			(xy 106.68 96.52) (xy 106.68 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59d6d857-7b63-4c7b-9641-72779f7e765c")
+	)
+	(wire
+		(pts
+			(xy 107.95 73.66) (xy 107.95 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5da43c38-cd67-4a31-89c9-e94a5dfec21b")
+	)
+	(wire
+		(pts
+			(xy 191.77 43.18) (xy 191.77 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e34a4f6-c431-4378-b2df-f6b6b4c8c874")
+	)
+	(wire
+		(pts
+			(xy 160.02 48.26) (xy 186.69 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61782752-9dab-4eff-8349-c7a6e58d70d9")
+	)
+	(wire
+		(pts
+			(xy 96.52 55.88) (xy 109.22 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "696f3ca7-00d7-42c6-b407-7f591ad3c9ca")
+	)
+	(wire
+		(pts
+			(xy 160.02 35.56) (xy 196.85 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a010580-6343-4462-8193-8d5b73a096b4")
+	)
+	(wire
+		(pts
+			(xy 189.23 76.2) (xy 196.85 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a723844-c4e5-4e52-aa0c-16048fecb976")
+	)
+	(wire
+		(pts
+			(xy 106.68 81.28) (xy 109.22 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71118d7e-a69e-40e5-a2ec-7d81b9bc7667")
+	)
+	(wire
+		(pts
+			(xy 40.64 99.06) (xy 40.64 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "718ae4d9-e013-44e7-ae92-84aea5524958")
+	)
+	(wire
+		(pts
+			(xy 212.09 96.52) (xy 166.37 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76382b21-6bad-44cc-882c-b138c479010a")
+	)
+	(wire
+		(pts
+			(xy 88.9 40.64) (xy 88.9 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e237acb-bf3b-48af-8964-d6a40730dfc2")
+	)
+	(wire
+		(pts
+			(xy 54.61 78.74) (xy 93.98 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f6f6d8f-49b1-4a94-a80f-7f0744d9b77b")
+	)
+	(wire
+		(pts
+			(xy 109.22 73.66) (xy 107.95 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83525b5c-60fe-4374-beb0-aadb8375021f")
+	)
+	(wire
+		(pts
+			(xy 40.64 99.06) (xy 49.53 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f190c38-b9af-4af5-84bb-f0b3073ac67a")
+	)
+	(wire
+		(pts
+			(xy 40.64 110.49) (xy 40.64 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92b6d991-2b27-4c12-be23-feb03750ea11")
+	)
+	(wire
+		(pts
+			(xy 93.98 78.74) (xy 93.98 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9439c6b2-d889-41b7-8719-07ae04696a71")
+	)
+	(wire
+		(pts
+			(xy 54.61 53.34) (xy 88.9 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "952ec048-567b-4b90-8484-21b7fc722910")
+	)
+	(wire
+		(pts
+			(xy 88.9 45.72) (xy 109.22 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9adc3d39-de60-4740-a162-3dce1fa3da50")
+	)
+	(wire
+		(pts
+			(xy 40.64 48.26) (xy 49.53 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c20397b-b8f7-4556-b1d1-1e6a96fb5f7f")
+	)
+	(wire
+		(pts
+			(xy 54.61 91.44) (xy 96.52 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f3e31a2-866c-45cb-93ff-81794820c55e")
+	)
+	(wire
+		(pts
+			(xy 160.02 45.72) (xy 189.23 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa070cf-799a-4456-b94c-73ff29673512")
+	)
+	(wire
+		(pts
+			(xy 165.1 95.25) (xy 165.1 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2782ece-3a0c-4855-b89c-6f142c99b36c")
+	)
+	(wire
+		(pts
+			(xy 99.06 58.42) (xy 109.22 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3abe9ac-5158-4e2c-aa65-4fa3ddb36c38")
+	)
+	(wire
+		(pts
+			(xy 109.22 78.74) (xy 109.22 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5fb0f59-69c4-440e-bbfe-b0a2fc0a9157")
+	)
+	(wire
+		(pts
+			(xy 40.64 73.66) (xy 49.53 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aace4f0c-2bdb-4842-aa2c-fd050460aed6")
+	)
+	(wire
+		(pts
+			(xy 194.31 55.88) (xy 196.85 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae0db887-a0ce-4013-a1a6-43588f03638d")
+	)
+	(wire
+		(pts
+			(xy 166.37 58.42) (xy 160.02 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b42ee5fb-87aa-4241-ab37-241d79ae298f")
+	)
+	(wire
+		(pts
+			(xy 88.9 53.34) (xy 88.9 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8c53f93-91d7-411c-9273-05eddb702e66")
+	)
+	(wire
+		(pts
+			(xy 212.09 35.56) (xy 212.09 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba79b0e9-aa23-402a-88d6-529514be54d5")
+	)
+	(wire
+		(pts
+			(xy 40.64 48.26) (xy 40.64 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2d977c9-3dea-4b2d-a09b-605d3c3a940c")
+	)
+	(wire
+		(pts
+			(xy 54.61 66.04) (xy 91.44 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3d63960-8d9d-46da-b4e3-05e77aac0813")
+	)
+	(wire
+		(pts
+			(xy 186.69 48.26) (xy 186.69 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c84c6002-516f-4803-8e41-0633c1e7f7ec")
+	)
+	(wire
+		(pts
+			(xy 107.95 95.25) (xy 165.1 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8ba73f0-f1db-4ffe-a544-9bbb7d41587c")
+	)
+	(wire
+		(pts
+			(xy 186.69 86.36) (xy 196.85 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cab69619-c15c-4ccd-8e13-3562c2ecf9dc")
+	)
+	(wire
+		(pts
+			(xy 166.37 96.52) (xy 166.37 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb4a77d3-6459-4e7b-b6dd-38f184568956")
+	)
+	(wire
+		(pts
+			(xy 91.44 66.04) (xy 91.44 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce1f44b2-efda-483f-987b-7275671fb149")
+	)
+	(wire
+		(pts
+			(xy 165.1 53.34) (xy 160.02 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf8d555a-7d02-49ad-a6c4-869ba36a0785")
+	)
+	(wire
+		(pts
+			(xy 160.02 43.18) (xy 191.77 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d42b9224-1a5b-4331-8f14-2792052f41e6")
+	)
+	(wire
+		(pts
+			(xy 54.61 104.14) (xy 99.06 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc32b35b-1344-4ed9-b3cf-b4ab053d80bf")
+	)
+	(wire
+		(pts
+			(xy 106.68 81.28) (xy 106.68 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2ae66a8-fac8-491b-be48-f8476e85ee87")
+	)
+	(wire
+		(pts
+			(xy 196.85 38.1) (xy 196.85 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4ecfd4b-a47a-4c9c-afb7-0d097c16a80d")
+	)
+	(wire
+		(pts
+			(xy 99.06 104.14) (xy 99.06 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efa4789f-1946-44c2-87b4-3d920d3cba6a")
+	)
+	(wire
+		(pts
+			(xy 54.61 40.64) (xy 88.9 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9c5778b-d3f9-4d92-9fc4-e3ad71932974")
+	)
+	(wire
+		(pts
+			(xy 40.64 73.66) (xy 40.64 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa03fbfb-2727-46b9-b82c-2c2a26e60e59")
+	)
+	(wire
+		(pts
+			(xy 40.64 35.56) (xy 49.53 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc8b8e76-e003-4bd2-bb1b-04ce00d5e869")
+	)
+	(wire
+		(pts
+			(xy 91.44 50.8) (xy 109.22 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdd4e2b7-e7fd-43f6-8a37-42923f3fed78")
+	)
+	(label "tie 11 and GND together, and 9 and 5v together, for pro micro compat"
+		(at 119.38 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "11b677b2-b6e2-48b0-8674-f8ebfc1e737a")
+	)
+	(label "We can use 2-8 and 15-21 for data"
+		(at 119.38 21.59 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "85984014-8e56-48bd-a5f0-89db0a9a3bef")
+	)
 	(symbol
-		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
-		(at 125.73 58.42 0)
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9cf47d01-c786-4823-b97d-fc13ba94e4e6")
-		(property "Reference" "MX1"
-			(at 125.73 50.8 0)
+		(uuid "0565cf22-a8b8-43ac-8c5e-55527b8e981f")
+		(property "Reference" "R4"
+			(at 200.66 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 70.358 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "249f9849-f298-4a52-862d-5547827932fd")
+		)
+		(pin "2"
+			(uuid "174e92ca-2eae-430f-929e-dab1033bc2e2")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Devices:LED_3mm")
+		(at 208.28 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07fbb5ce-f7be-4afb-98d9-fa5b64e8d287")
+		(property "Reference" "D6"
+			(at 208.28 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_3mm"
+			(at 208.28 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 89.154 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3mm diameter small LED"
+			(at 208.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "35c2a91f-2dea-49e6-8175-083d2c9690f7")
+		)
+		(pin "2"
+			(uuid "5de94361-d7ac-43c1-b173-95ed7bbed67c")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "D6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Devices:LED_3mm")
+		(at 208.28 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3223f823-bb93-43ea-af09-f309ef6862ab")
+		(property "Reference" "D2"
+			(at 208.28 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_3mm"
+			(at 208.28 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 48.514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3mm diameter small LED"
+			(at 208.28 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cf54680c-81f9-4cd8-b57b-19b18f7f699c")
+		)
+		(pin "2"
+			(uuid "2e41f525-4c90-45e9-a8d9-1cd87387b2b2")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3cd33532-a151-4f06-adc7-8685d6dca7c4")
+		(property "Reference" "MX2"
+			(at 52.07 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1735,7 +2309,7 @@
 			)
 		)
 		(property "Value" "MX_SW_solder"
-			(at 125.73 53.34 0)
+			(at 52.07 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1743,7 +2317,7 @@
 			)
 		)
 		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
-			(at 125.73 58.42 0)
+			(at 52.07 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1752,7 +2326,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 125.73 58.42 0)
+			(at 52.07 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1761,7 +2335,551 @@
 			)
 		)
 		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
-			(at 125.73 58.42 0)
+			(at 52.07 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce7b6f47-344e-409f-8956-7999664fcc63")
+		)
+		(pin "2"
+			(uuid "320545b7-b094-480c-b7bc-985e8441fe7e")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "MX2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "49390654-4f1c-4bc5-9487-5dd3ab4cbd12")
+		(property "Reference" "R3"
+			(at 200.66 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 60.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "61a8ee5c-7ddb-4fb3-a9ab-c6fc13b60a4f")
+		)
+		(pin "2"
+			(uuid "141b3a65-cb69-410d-8495-a5c6d825254e")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "50ffafcf-fa8b-4658-9f4d-fab9c099afe9")
+		(property "Reference" "MX1"
+			(at 52.07 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MX_SW_solder"
+			(at 52.07 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
+			(at 52.07 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 52.07 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b6224fc-7dd1-4ba2-b941-ec5c6b2f78bc")
+		)
+		(pin "2"
+			(uuid "06c30466-12f0-4266-8367-cc8dd1df8fa6")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "MX1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "685770c9-2e11-4f80-bf48-1de67f06ed53")
+		(property "Reference" "MX3"
+			(at 52.07 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MX_SW_solder"
+			(at 52.07 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
+			(at 52.07 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 52.07 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "02373cb3-41a6-4a75-b27a-f6fef1570f47")
+		)
+		(pin "2"
+			(uuid "a503844f-3fec-44aa-a6fe-e32d44658dfe")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "MX3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Devices:LED_3mm")
+		(at 208.28 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6e2d67c4-38de-4c1c-8552-a0799d2a3879")
+		(property "Reference" "D4"
+			(at 208.28 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_3mm"
+			(at 208.28 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 68.834 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3mm diameter small LED"
+			(at 208.28 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c36eb940-adb2-4524-8345-b6ddb046d069")
+		)
+		(pin "2"
+			(uuid "c0534381-92b6-4009-89bd-9bd47847f713")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "70e0a17e-a471-413e-a9d0-63d4254a00bf")
+		(property "Reference" "MX5"
+			(at 52.07 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MX_SW_solder"
+			(at 52.07 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
+			(at 52.07 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 52.07 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "73c0b81c-119a-4bf0-96f4-ee2a2bae8b0f")
+		)
+		(pin "2"
+			(uuid "5437ccd5-1f5d-468e-b1fd-c5892853604b")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "MX5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "794101a2-969c-4257-aa2b-1728c9c2e4b4")
+		(property "Reference" "R5"
+			(at 200.66 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 80.518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ea1400c9-d336-45be-a3b3-cc9637d4f933")
+		)
+		(pin "2"
+			(uuid "38f690db-f31e-4471-8296-fb1054610f7e")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Devices:LED_3mm")
+		(at 208.28 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "79888521-adaa-48b7-9603-19e7d42f608c")
+		(property "Reference" "D5"
+			(at 208.28 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_3mm"
+			(at 208.28 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 78.994 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3mm diameter small LED"
+			(at 208.28 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "623c243d-bdd7-4e6b-a7c1-aa49c6f54779")
+		)
+		(pin "2"
+			(uuid "676b179a-95a2-44e4-973c-ef8940b0d184")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9cf47d01-c786-4823-b97d-fc13ba94e4e6")
+		(property "Reference" "MX6"
+			(at 52.07 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MX_SW_solder"
+			(at 52.07 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
+			(at 52.07 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 52.07 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 52.07 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1778,49 +2896,40 @@
 		(instances
 			(project ""
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
-					(reference "MX1")
+					(reference "MX6")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Neko:Arduino_ProMicro")
-		(at 40.64 110.49 0)
+		(lib_id "PCM_marbastlib-mx:MX_SW_solder")
+		(at 52.07 63.5 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "aa4d83cc-43f2-4231-ad74-ad95453da5dd")
-		(property "Reference" "U1"
-			(at 40.64 88.9 0)
+		(uuid "a949dda6-fedf-4e88-819d-39a6a67d7ac6")
+		(property "Reference" "MX4"
+			(at 52.07 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "ProMicro"
-			(at 40.64 91.44 0)
+		(property "Value" "MX_SW_solder"
+			(at 52.07 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Neko:ProMicro_USBup"
-			(at 40.64 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 27.94 96.52 0)
+		(property "Footprint" "PCM_marbastlib-mx:SW_MX_1u"
+			(at 52.07 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1828,8 +2937,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Symbol for an Arduino Pro Micro"
-			(at 40.64 110.49 0)
+		(property "Datasheet" "~"
+			(at 52.07 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1837,82 +2946,25 @@
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "9ffad89e-96c8-44f6-ba90-3a52ec5d5235")
+		(property "Description" "Push button switch, normally open, two pins, 45° tilted"
+			(at 52.07 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(pin "RAW"
-			(uuid "8001409b-d303-4353-9914-dfca32aa108a")
-		)
-		(pin "7"
-			(uuid "01b25210-83fd-4548-abb5-d40f4a32cdde")
-		)
-		(pin "20"
-			(uuid "2bc11cb6-9a6c-488a-91c1-ab7137d7724c")
-		)
-		(pin "21"
-			(uuid "2f9d688d-959a-406a-8662-dd7e70d18968")
-		)
-		(pin "GND"
-			(uuid "6cf860fd-f883-4f03-8c45-dbe3f987602f")
-		)
-		(pin "RST"
-			(uuid "4456664c-6768-43c8-827b-23943e1fcb48")
-		)
-		(pin "9"
-			(uuid "8f7807c8-b057-4e3d-a34c-5ca50a6b773a")
-		)
-		(pin "GND"
-			(uuid "dcb2a399-c246-46db-95ec-9674bdba195e")
-		)
-		(pin "RX"
-			(uuid "d6d4378e-07ca-4014-95c8-786e48d9f6e7")
-		)
-		(pin "5"
-			(uuid "53222a58-ed1e-4d04-ab17-9a2d4c228e97")
-		)
-		(pin "4"
-			(uuid "ac49df61-d134-486c-8bc6-dbccb59c1837")
-		)
-		(pin "6"
-			(uuid "39c19a97-b19d-4bbc-9770-551b7217365c")
-		)
-		(pin "8"
-			(uuid "c90b3610-6f54-42c3-be0f-89f407fbfd20")
-		)
-		(pin "GND"
-			(uuid "3f850b41-c3ca-4ca2-9c6f-6bc62c28f311")
-		)
-		(pin "TX"
-			(uuid "f4097afd-8295-4cff-b30b-41aa786f0f15")
-		)
-		(pin "VCC"
-			(uuid "aa685f41-b66a-409a-90ab-5c637bfc5e12")
+		(pin "1"
+			(uuid "9a291226-88d8-4095-a82e-a9b4f9ef2abe")
 		)
 		(pin "2"
-			(uuid "a03903c5-cd8a-4838-a05c-0ede87833c35")
-		)
-		(pin "19"
-			(uuid "c3430758-c281-4042-b57a-edf43ff754ed")
-		)
-		(pin "18"
-			(uuid "048a01ba-830b-4cc3-92a7-99fc164c3f8f")
-		)
-		(pin "16"
-			(uuid "cec1c555-8fde-4ea0-a0e4-9622c9a84ed0")
-		)
-		(pin "15"
-			(uuid "5ef5074a-4590-4af8-8d07-c9a3691ebc13")
-		)
-		(pin "14"
-			(uuid "01c17af2-8eb1-4158-92ea-a21e2a207b6e")
-		)
-		(pin "10"
-			(uuid "e4ec524a-6b1d-451a-90d6-07908d45de45")
+			(uuid "12f26d5c-d986-4d7d-97cc-b9a86a9999c8")
 		)
 		(instances
-			(project ""
+			(project "strimdick"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
-					(reference "U1")
+					(reference "MX4")
 					(unit 1)
 				)
 			)
@@ -1920,7 +2972,7 @@
 	)
 	(symbol
 		(lib_id "Neko:Arduino_Nano_Socket")
-		(at 41.91 54.61 0)
+		(at 134.62 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1929,7 +2981,7 @@
 		(fields_autoplaced yes)
 		(uuid "b12139bc-36cf-470e-ab51-9a61204ef008")
 		(property "Reference" "A1"
-			(at 41.91 22.86 0)
+			(at 134.62 26.67 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -1937,7 +2989,7 @@
 			)
 		)
 		(property "Value" "Arduino_Nano_Socket"
-			(at 41.91 25.4 0)
+			(at 134.62 29.21 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -1945,7 +2997,7 @@
 			)
 		)
 		(property "Footprint" "Neko:Arduino_Nano_Socket"
-			(at 41.91 88.9 0)
+			(at 134.62 92.71 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -1954,7 +3006,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.arduino.cc/hardware/nano"
-			(at 41.91 85.09 0)
+			(at 134.62 88.9 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -1963,7 +3015,7 @@
 			)
 		)
 		(property "Description" "Socket for Arduino Nano"
-			(at 41.91 54.61 0)
+			(at 134.62 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2072,16 +3124,16 @@
 	)
 	(symbol
 		(lib_id "PCM_SL_Devices:LED_3mm")
-		(at 137.16 46.99 0)
+		(at 208.28 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "fe24d299-19bd-4039-89fb-bc198c6afde5")
-		(property "Reference" "D1"
-			(at 137.16 40.64 0)
+		(uuid "bc187653-6eae-4129-af1f-07886d985bda")
+		(property "Reference" "D3"
+			(at 208.28 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2089,15 +3141,15 @@
 			)
 		)
 		(property "Value" "LED_3mm"
-			(at 137.16 43.18 0)
+			(at 208.28 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
-			(at 136.144 49.784 0)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2106,7 +3158,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.89 46.99 0)
+			(at 207.01 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2115,7 +3167,279 @@
 			)
 		)
 		(property "Description" "3mm diameter small LED"
-			(at 137.16 46.99 0)
+			(at 208.28 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15d7ed4f-4325-43f2-837b-1aca09e6f1d7")
+		)
+		(pin "2"
+			(uuid "3d849d26-07e5-4ee5-9ba6-03a2b96556f5")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 86.36 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e3018519-fbd3-4e4a-bf7d-b60f2db7a8e4")
+		(property "Reference" "R6"
+			(at 200.66 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "04e2290d-bc58-4fd1-af68-ee659dfc5e99")
+		)
+		(pin "2"
+			(uuid "39f99cf8-25ee-447f-9a0c-4597f2ac7d57")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eee9491d-ee68-4d38-977a-d910c73cd8a6")
+		(property "Reference" "R2"
+			(at 200.66 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 50.038 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "000fbc9e-e295-47f8-93db-ed67f19e1a41")
+		)
+		(pin "2"
+			(uuid "04096108-30a4-4ff6-ae07-cc2e46d23ffd")
+		)
+		(instances
+			(project "strimdick"
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Resistors:220ohm")
+		(at 200.66 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f1b106e9-75b6-4fc4-ae58-14204ca18709")
+		(property "Reference" "R1"
+			(at 200.66 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "220ohm"
+			(at 200.66 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 201.549 39.878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.168 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "220Ω, 1/4W Resistor"
+			(at 200.66 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d6e4d9fd-febf-4fc7-aae8-e19eaae1fc7a")
+		)
+		(pin "2"
+			(uuid "a984782f-fa4b-4a4b-9abd-9ee9b941abe1")
+		)
+		(instances
+			(project ""
+				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PCM_SL_Devices:LED_3mm")
+		(at 208.28 35.56 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fe24d299-19bd-4039-89fb-bc198c6afde5")
+		(property "Reference" "D1"
+			(at 208.28 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LED_3mm"
+			(at 208.28 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PCM_marbastlib-mx:LED_MX_3mm"
+			(at 207.264 38.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 207.01 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "3mm diameter small LED"
+			(at 208.28 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
