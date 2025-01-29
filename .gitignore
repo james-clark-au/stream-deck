@@ -7,6 +7,7 @@
 # kicad
 *.lck
 fp-info-cache
+gerber_to_order/
 
 # Node artifact files
 node_modules/
