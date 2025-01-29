@@ -6259,6 +6259,18 @@
 			(justify left bottom mirror)
 		)
 	)
+	(gr_text "JLCJLCJLCJLC"
+		(at 70.5 48 0)
+		(layer "F.SilkS")
+		(uuid "1d4a4fe7-b855-4878-9981-c6ed9bcd2381")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "james_neko's strim dick v1"
 		(at 70.5 31 0)
 		(layer "F.SilkS")
