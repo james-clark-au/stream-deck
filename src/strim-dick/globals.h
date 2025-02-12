@@ -2,6 +2,9 @@
 
 #define BAUD_RATE 9600
 #define LAZY_ID "strim-dick 1.0"
+#define NUM_LEDS 6
+#define DEFAULT_BLINK_MS 500
+
 #ifdef ARDUINO_AVR_NANO
   // Arduino Nano, using an ATmega328P - tiny and cheap, but can't do native USB
   #define BOARD_NAME "arduino nano"
@@ -26,3 +29,4 @@
 
 
 BlinkyLed::BlinkyLed blinky(STATUS_LED, 500);
+BlinkyLed::BlinkyLed leds[NUM_LEDS];
