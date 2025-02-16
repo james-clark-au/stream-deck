@@ -26,7 +26,11 @@
 
 
 #include "BlinkyLed.h"
+#include "SavedScript.h"
 
 
 BlinkyLed::BlinkyLed blinky(STATUS_LED, 500);
 BlinkyLed::BlinkyLed leds[NUM_LEDS];
+
+SavedScript::SavedScript saved;
+

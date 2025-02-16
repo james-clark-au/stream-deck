@@ -102,11 +102,21 @@ void cmd_led(char *args) {
 }
 
 
+void cmd_save(char *args) {
+  saved.beginNewSave();
+  saved.write("OHAI\n");
+  saved.finishSave();
+  Serial.print(F("OK SAVE script len="));
+  Serial.println(saved.length());
+}
+
+
 void register_commands() {
   lazy.register_callback("OHAI", &cmd_ohai);
   lazy.register_callback("PINOUT", &cmd_pinout);
   lazy.register_callback("BLINK", &cmd_blink);
   lazy.register_callback("LED", &cmd_led);
+  lazy.register_callback("SAVE", &cmd_save);
 }
 
 

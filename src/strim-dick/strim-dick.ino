@@ -6,6 +6,7 @@ void setup() {
   register_commands();
   Serial.begin(BAUD_RATE);
 
+  saved.init();
   Serial.println(F("\nOK STARTING"));
 }
 
