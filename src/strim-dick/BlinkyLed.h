@@ -18,7 +18,17 @@ namespace BlinkyLed
       d_interval = interval_ms;
       pinMode(pin, OUTPUT);
     }
+
+    explicit
+    operator bool() const {
+      return d_pin != NO_PIN;
+    }
   
+    uint8_t
+    pin() {
+      return d_pin;
+    }
+
     void
     changePin(uint8_t pin) {
       // Bring old pin low first
