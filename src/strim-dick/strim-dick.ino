@@ -24,6 +24,23 @@ void loop() {
   for (int i = 0; i < NUM_LEDS; ++i) {
     leds[i].loop();
   }
+  for (int i = 0; i < NUM_KEYS; ++i) {
+    PushButton::PressState pushed = keys[i].loop();
+    if (pushed == PushButton::PRESSED) {
+      led_only(i);
+    } else if (pushed == PushButton::RELEASED) {
+      Serial.print(F("INPUT KEY "));
+      Serial.print(i);
+      Serial.println(F(" CLICKED"));
+    } else if (pushed == PushButton::HELD && keys[i].lastHoldTime() > 1000) {
+      keys[i].cancel();
+      Serial.print(F("INPUT KEY "));
+      Serial.print(i);
+      Serial.println(F(" HELD"));
+      leds[i].blink(1000);
+      leds[i].set(LOW);  // Make sure it starts off
+    }
+  }
 
   delay(1);
 }

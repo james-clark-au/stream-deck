@@ -45,7 +45,11 @@ void cmd_blink(char *args) {
 
 void led_only(uint8_t ledNum) {
   for (uint8_t i = 0; i < NUM_LEDS; ++i) {
-    leds[i].set(i == ledNum ? HIGH : LOW);
+    if (i == ledNum) {
+      leds[i].on();
+    } else {
+      leds[i].off();
+    }
   }
 }
 
@@ -128,6 +132,42 @@ void cmd_clear(char *args) {
 }
 
 
+void usage_key() {
+  Serial.println(F("ERR Usage: KEY <num> PIN <pin>"));
+}
+void cmd_key(char *args) {
+  char *pos = firsttok(args);
+  if ( ! pos) {
+    usage_key();
+    return;
+  }
+  uint8_t keyNum = constrain(atoi(pos), 0, 64);
+  if (keyNum > NUM_KEYS) {
+    Serial.print(F("ERR key num must be 0.."));
+    Serial.println(NUM_KEYS);
+  }
+
+  pos = nexttok(args);
+  if ( ! pos) {
+    usage_key();
+    return;
+  }
+  if (strcasecmp(pos, "PIN") == 0) {
+    pos = nexttok(args);
+    if ( ! pos) {
+      usage_key();
+      return;
+    }
+    uint8_t pinNum = constrain(atoi(pos), 0, 64);
+    keys[keyNum].changePin(pinNum);
+    Serial.print(F("OK KEY "));
+    Serial.print(keyNum);
+    Serial.print(F(" PIN "));
+    Serial.println(pinNum);
+  }
+}
+
+
 void cmd_save(char *args) {
   saved.beginNewSave();
   for (uint8_t i = 0; i < NUM_LEDS; ++i) {
@@ -138,6 +178,18 @@ void cmd_save(char *args) {
       cmd += String(i);
       cmd += " PIN ";
       cmd += String(leds[i].pin());
+      cmd += "\n";
+      saved.write(cmd.c_str());
+    }
+  }
+  for (uint8_t i = 0; i < NUM_KEYS; ++i) {
+    if (keys[i]) {
+      String cmd;
+      cmd.reserve(14);
+      cmd += "KEY ";
+      cmd += String(i);
+      cmd += " PIN ";
+      cmd += String(keys[i].pin());
       cmd += "\n";
       saved.write(cmd.c_str());
     }
@@ -173,6 +225,7 @@ void register_commands() {
   lazy.register_callback("BLINK", &cmd_blink);
   lazy.register_callback("LED", &cmd_led);
   lazy.register_callback("CLEAR", &cmd_clear);
+  lazy.register_callback("KEY", &cmd_key);
   lazy.register_callback("SAVE", &cmd_save);
   lazy.register_callback("EYECATCH", &cmd_eyecatch);
 }

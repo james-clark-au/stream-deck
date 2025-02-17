@@ -3,6 +3,7 @@
 #define BAUD_RATE 9600
 #define LAZY_ID "strim-dick 1.0"
 #define NUM_LEDS 6
+#define NUM_KEYS 6
 #define DEFAULT_BLINK_MS 500
 
 #ifdef ARDUINO_AVR_NANO
@@ -26,11 +27,14 @@
 
 
 #include "BlinkyLed.h"
+#include "PushButton.h"
 #include "SavedScript.h"
 
 
 BlinkyLed::BlinkyLed blinky(STATUS_LED, 500);
 BlinkyLed::BlinkyLed leds[NUM_LEDS];
+
+PushButton::PushButton keys[NUM_KEYS];
 
 SavedScript::SavedScript saved;
 
