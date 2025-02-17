@@ -104,7 +104,18 @@ void cmd_led(char *args) {
 
 void cmd_save(char *args) {
   saved.beginNewSave();
-  saved.write("OHAI\n");
+  for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+    if (leds[i]) {
+      String cmd;
+      cmd.reserve(14);
+      cmd += "LED ";
+      cmd += String(i);
+      cmd += " PIN ";
+      cmd += String(leds[i].pin());
+      cmd += "\n";
+      saved.write(cmd.c_str());
+    }
+  }
   saved.finishSave();
   Serial.print(F("OK SAVE script len="));
   Serial.println(saved.length());

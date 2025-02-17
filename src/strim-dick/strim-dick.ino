@@ -2,11 +2,17 @@
 #include "commands.h"
 
 
+char read_saved_script(size_t pos) {
+  return saved.readChar(pos);
+}
+
+
 void setup() {
   register_commands();
   Serial.begin(BAUD_RATE);
 
   saved.init();
+  lazy.run_script(&read_saved_script);
   Serial.println(F("\nOK STARTING"));
 }
 

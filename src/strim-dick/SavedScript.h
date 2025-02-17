@@ -46,6 +46,7 @@ namespace SavedScript {
         d_saved = false;
         return;
       }
+      d_saved = true;
       Serial.print(F("csum="));
       Serial.print(d_header.csum, HEX);
       Serial.print(F(" len="));
@@ -89,13 +90,30 @@ namespace SavedScript {
       while (*str) {
         write(*str++);
       }
-      write('\0');
     }
 
 
     void
     finishSave() {
+      write('\0');
       EEPROM.put(0, d_header);
+      d_saved = true;
+    }
+
+
+    char
+    readChar(uint32_t pos) {
+      if ( ! d_saved) {
+        return '\0';
+      }
+      if (pos >= length()) {
+        return '\0';
+      }
+      pos += sizeof(EepromHeader);
+      if (pos >= EEPROM.length()) {
+        return '\0';
+      }
+      return EEPROM[pos];
     }
 
 
