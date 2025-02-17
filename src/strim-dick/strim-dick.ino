@@ -13,7 +13,8 @@ void setup() {
 
   saved.init();
   lazy.run_script(&read_saved_script);
-  Serial.println(F("\nOK STARTING"));
+  cmd_eyecatch(nullptr);
+  Serial.println(F("\nOK READY"));
 }
 
 

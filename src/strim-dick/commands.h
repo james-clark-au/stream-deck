@@ -43,8 +43,22 @@ void cmd_blink(char *args) {
 }
 
 
+void led_only(uint8_t ledNum) {
+  for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+    leds[i].set(i == ledNum ? HIGH : LOW);
+  }
+}
+
+
+void led_clear() {
+  for (uint8_t i = 0; i < NUM_LEDS; ++i) {
+    leds[i].off();
+  }
+}
+
+
 void usage_led() {
-  Serial.println(F("ERR Usage: LED <num> (ON|OFF|BLINK <ms>|PIN <pin>)"));
+  Serial.println(F("ERR Usage: LED <num> (ON|OFF|ONLY|BLINK <ms>|PIN <pin>)"));
 }
 void cmd_led(char *args) {
   char *pos = firsttok(args);
@@ -75,6 +89,12 @@ void cmd_led(char *args) {
     Serial.print(ledNum);
     Serial.println(F(" ON"));
 
+  } else if (strcasecmp(pos, "ONLY") == 0) {
+    led_only(ledNum);
+    Serial.print(F("OK LED "));
+    Serial.print(ledNum);
+    Serial.println(F(" ONLY"));
+
   } else if (strcasecmp(pos, "BLINK") == 0) {
     uint32_t interval_ms = DEFAULT_BLINK_MS;
     pos = nexttok(args);
@@ -102,6 +122,12 @@ void cmd_led(char *args) {
 }
 
 
+void cmd_clear(char *args) {
+  led_clear();
+  Serial.println(F("OK CLEAR"));
+}
+
+
 void cmd_save(char *args) {
   saved.beginNewSave();
   for (uint8_t i = 0; i < NUM_LEDS; ++i) {
@@ -122,12 +148,33 @@ void cmd_save(char *args) {
 }
 
 
+void cmd_eyecatch(char *args) {
+  int which = args ? atoi(args) : 0;
+  if (which == 1) {
+    for (int i = 0; i < NUM_LEDS; ++i) {
+      led_only(i);
+      delay(20);
+    }
+    led_only(-1);
+  } else {
+    for (int i = NUM_LEDS - 1; i >= 0; --i) {
+      led_only(i);
+      delay(20);
+    }
+    led_clear();
+  }
+  Serial.println(F("OK EYECATCH"));
+}
+
+
 void register_commands() {
   lazy.register_callback("OHAI", &cmd_ohai);
   lazy.register_callback("PINOUT", &cmd_pinout);
   lazy.register_callback("BLINK", &cmd_blink);
   lazy.register_callback("LED", &cmd_led);
+  lazy.register_callback("CLEAR", &cmd_clear);
   lazy.register_callback("SAVE", &cmd_save);
+  lazy.register_callback("EYECATCH", &cmd_eyecatch);
 }
 
 
