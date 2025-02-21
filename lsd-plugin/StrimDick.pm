@@ -13,6 +13,7 @@ my %HARDCODED_CONFIG = (
   "5-CLICKED" => "Card: Just Chatting",
   "5-HELD"    => "Card: Starting Soon",
   "4-CLICKED" => "Card: Just Catting",
+  "4-HELD"    => "Card: Poppycams",
   "3-CLICKED" => "Game: Ultima 9",
   "3-HELD"    => "Game: Serpent Isle",
   "2-CLICKED" => "Game: Generic Fullscreen",
@@ -20,10 +21,34 @@ my %HARDCODED_CONFIG = (
   "1-HELD"    => "Card: Technical Difficulties",
   "0-CLICKED" => "Card: Stream Ended",
 );
+sub get_scene_for_key($self, $key, $act) {
+  return $HARDCODED_CONFIG{"$key-$act"};
+}
+sub get_key_for_scene($self, $scene) {
+  while (my ($key, $value) = each %HARDCODED_CONFIG) {
+    if (lc $value eq lc $scene && $key =~ /^(\d+)-(\w+)$/) {
+      return $1, $2;
+    }
+  }
+  return -1, '';
+}
 
 
 sub init($self) {
   $self->log("init()");
+  $self->obs->on(event => sub ($obs, $event, $event_data) {
+    if ($event eq 'CurrentProgramSceneChanged') {
+      my ($key, $act) = $self->get_key_for_scene($event_data->{sceneName});
+      if ($key == -1) {
+        $self->device->send("CLEAR");
+      } elsif ($act eq 'CLICKED') {
+        $self->device->send("LED $key ONLY");
+      } elsif ($act eq 'HELD') {
+        $self->device->send("CLEAR");
+        $self->device->send("LED $key BLINK");
+      }
+    }
+  });
   return 1;
 }
 
@@ -52,8 +77,8 @@ sub handle_input($self, $line) {
   if ($line =~ /^INPUT KEY (\d+) (\w+)$/) {
     my $key = $1;  # 0..5
     my $act = $2;  # CLICKED or HELD
-    if ($HARDCODED_CONFIG{"$key-$act"}) {
-      my $scene = $HARDCODED_CONFIG{"$key-$act"};
+    my $scene = $self->get_scene_for_key($key, $act);
+    if ($scene) {
       $self->log("$line - scene $scene");
     } else {
       $self->log("$line - no binding");
