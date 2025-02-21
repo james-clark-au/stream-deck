@@ -2,10 +2,12 @@ package LazyCat::LazySerial::Handler::StrimDick;
 use Mojo::Base 'LazyCat::LazySerial::Handler', -signatures;
 
 use LazyCat::LazySerial::Heartbeat;
+use LazyCat::LazySerial::Handler::StrimDick::ObsLink;
 
 
 has debug => 0;
 has heartbeat => sub { LazyCat::LazySerial::Heartbeat->new(rate_s => 60) };
+has obs => sub { LazyCat::LazySerial::Handler::StrimDick::ObsLink->new() };
 
 my %HARDCODED_CONFIG = (
   "5-CLICKED" => "Card: Just Chatting",
@@ -73,6 +75,8 @@ sub connected($self) {
 #  $self->heartbeat->resume_fn(sub { $self->device->send("EYECATCH"); $self->set_light(); });
 #  $self->heartbeat->enable();
 #  $self->heartbeat->beat();
+
+  $self->obs->connect();
 }
 
 
