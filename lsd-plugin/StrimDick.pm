@@ -80,6 +80,7 @@ sub handle_input($self, $line) {
     my $scene = $self->get_scene_for_key($key, $act);
     if ($scene) {
       $self->log("$line - scene $scene");
+      $self->obs->send_request(SetCurrentProgramScene => { sceneName => $scene });
     } else {
       $self->log("$line - no binding");
     }

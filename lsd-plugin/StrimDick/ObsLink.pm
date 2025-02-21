@@ -179,6 +179,23 @@ sub send_identify($self, $authentication, $subscriptions) {
 }
 
 
+sub send_request($self, $request, $data) {
+  my $opcode = opcode_by_name('Request');
+  my $id = int rand 10;  #### TODO actual mapping of RequestResponse back to original request, somehow
+  my $msg = {
+    op => $opcode,
+    d => {
+      requestType => $request,
+      requestId => $id,
+      requestData => $data,
+    },
+  };
+  my $json = encode_json $msg;
+  $self->log("<== [$opcode Request] $json");
+  $self->tx->send($json);
+}
+
+
 async sync_p => sub ($self) {
   #my $res = await $self->obs->
 };
