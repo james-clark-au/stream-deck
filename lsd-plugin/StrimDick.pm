@@ -1,10 +1,12 @@
 package LazyCat::LazySerial::Handler::StrimDick;
 use Mojo::Base 'LazyCat::LazySerial::Handler', -signatures;
 
+use Mojo::AsyncAwait;
+
 use LazyCat::LazySerial::Heartbeat;
 use LazyCat::LazySerial::Handler::StrimDick::ObsLink;
 
-
+use JSON;
 has debug => 0;
 has heartbeat => sub { LazyCat::LazySerial::Heartbeat->new(rate_s => 60) };
 has obs => sub { LazyCat::LazySerial::Handler::StrimDick::ObsLink->new() };
@@ -39,20 +41,16 @@ sub init($self) {
   $self->log("init()");
   $self->obs->on(event => sub ($obs, $event, $event_data) {
     if ($event eq 'CurrentProgramSceneChanged') {
-      my ($key, $act) = $self->get_key_for_scene($event_data->{sceneName});
-      if ($key == -1) {
-        $self->device->send("CLEAR");
-      } elsif ($act eq 'CLICKED') {
-        $self->device->send("LED $key ONLY");
-      } elsif ($act eq 'HELD') {
-        $self->device->send("CLEAR");
-        $self->device->send("LED $key BLINK");
-      }
+      $self->set_led_for_scene($event_data->{sceneName});
     
     } elsif ($event eq 'ExitStarted') {
       $self->device->send("CLEAR");
 
     }
+  });
+  $self->obs->on(ready => sub ($obs) {
+    $self->log("Syncing with OBS...");
+    $self->sync_p();
   });
   return 1;
 }
@@ -120,9 +118,29 @@ sub disconnected($self) {
 
 # ----
 
-# Set light according to OBS scene
-sub set_light($self) {
+sub set_led_for_scene($self, $scene) {
+  my ($key, $act) = $self->get_key_for_scene($scene);
+  if ($key == -1) {
+    $self->device->send("CLEAR");
+  } elsif ($act eq 'CLICKED') {
+    $self->device->send("LED $key ONLY");
+  } elsif ($act eq 'HELD') {
+    $self->device->send("CLEAR");
+    $self->device->send("LED $key BLINK");
+  }
 }
+
+
+# Ask OBS for current status and act accordingly
+async sync_p => sub ($self) {
+  eval {
+    my $rdata = await $self->obs->send_request_p(GetCurrentProgramScene => {});
+    $self->set_led_for_scene($rdata->{sceneName});
+  };
+  if ($@) {
+    $self->log("OBS sync request failed: $@");
+  };
+};
 
 
 1;

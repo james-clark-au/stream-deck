@@ -3,6 +3,7 @@ use Mojo::Base 'Mojo::EventEmitter', -signatures;
 
 use Mojo::WebSocket 'WS_PING';
 use Mojo::AsyncAwait;
+use Mojo::Promise;
 use Mojo::UserAgent;
 use Mojo::JSON qw/decode_json encode_json/;
 use Term::ANSIColor;
@@ -22,6 +23,9 @@ has keepalive_tid => undef;
 
 # Synced from OBS
 has scenes => sub { [] };
+
+# Hash of id => Promise
+has pending_requests => sub { {} };
 
 
 my @OPCODES = qw/Hello Identify Identified Reidentify 4 Event Request RequestResponse RequestBatch RequestBatchResponse/;
@@ -43,6 +47,12 @@ sub eventsubs_mask(@events) {
     $mask |= eventsub_by_name($event);
   }
   return $mask;
+}
+
+
+sub next_id() {
+  state $id = 1;
+  return $id++;
 }
 
 
@@ -128,6 +138,7 @@ sub handle_message($self, $rawmsg) {
   return $self->handle_hello($msg->{d}) if $opname eq 'Hello';
   return $self->handle_identified($msg->{d}) if $opname eq 'Identified';
   return $self->handle_event($msg->{d}) if $opname eq 'Event';
+  return $self->handle_request_response($msg->{d}) if $opname eq 'RequestResponse';
 }
 
 
@@ -149,6 +160,7 @@ sub handle_hello($self, $data) {
 
 sub handle_identified($self, $data) {
   $self->log("Identified!");
+  $self->emit("ready");
   $self->attempt(0);
 }
 
@@ -158,6 +170,26 @@ sub handle_event($self, $data) {
   my $event_data = $data->{eventData};
   $self->log("Event: $event " . encode_json($event_data));
   $self->emit(event => $event, $event_data);
+}
+
+
+sub handle_request_response($self, $data) {
+  my $request = $data->{requestType};
+  my $id = $data->{requestId};
+  my $status = $data->{requestStatus};
+  my $rdata = $data->{responseData};
+  my $promise = $self->pending_requests->{$id};
+  delete $self->pending_requests->{$id};
+
+  if ( ! $status->{result}) {
+    my $reason = "Code: " . $status->{code};
+    $reason .= " (" . $status->{comment} . ")" if $status->{comment};
+    $self->log("Request #$id $request failed, $reason");
+    $promise->reject($reason) if $promise;
+    return;
+  }
+  $promise->resolve($rdata) if $promise;
+  return $rdata;
 }
 
 
@@ -187,10 +219,10 @@ sub send_identify($self, $authentication, $subscriptions) {
 }
 
 
-sub send_request($self, $request, $data) {
+async send_request_p => sub ($self, $request, $data) {
   return $self->log("Can't send Request $request, not connected!") unless $self->tx;
   my $opcode = opcode_by_name('Request');
-  my $id = int rand 10;  #### TODO actual mapping of RequestResponse back to original request, somehow
+  my $id = next_id();
   my $msg = {
     op => $opcode,
     d => {
@@ -201,7 +233,15 @@ sub send_request($self, $request, $data) {
   };
   my $json = encode_json $msg;
   $self->log("<== [$opcode Request] $json");
+  $self->pending_requests->{$id} = Mojo::Promise->timeout(10 => "OBS Request $id $request timed out.");
   $self->tx->send($json);
+  return $self->pending_requests->{$id};
+};
+
+
+sub send_request($self, $request, $data) {
+  # Fire and forget
+  $self->send_request_p($request, $data);
 }
 
 
