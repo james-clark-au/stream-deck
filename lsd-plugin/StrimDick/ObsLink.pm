@@ -58,7 +58,13 @@ sub connect ($self) {
 
   $self->ua->start($tx, sub ($ua, $tx) {
     if (my $err = $tx->req->error || $tx->res->error || $tx->error) {
-      $self->log("Websocket error: " . ($err->{code} // '') . " " . $err->{message} );
+      if ($err->{message} =~ /Connection refused/i && $self->attempt > 0) {
+        # Suppress log to avoid spam
+      } else {
+        $self->log("Websocket error: " . ($err->{code} // '') . " " . $err->{message} );
+      }
+      $self->reconnect();
+      return;
     }
     unless ($tx && $tx->is_websocket) {
       $self->log("Websocket handshake to " . $self->url . " failed!");
@@ -100,10 +106,11 @@ sub ping($self) {
 
 sub reconnect($self) {
   my $seconds = ($self->attempt + 1) ** 2;
-  $seconds = 300 if $seconds > 300;
-  $self->log("Reconnecting in ${seconds}s...");
+  $seconds = 10 if $seconds > 10;
+  $self->log("Reconnecting in ${seconds}s...") unless $self->attempt > 5;
   Mojo::IOLoop->timer($seconds => sub ($loop) {
     $self->attempt($self->attempt + 1);
+    $self->attempt(10) if $self->attempt > 10;
     $self->connect();
   });
 }
@@ -164,6 +171,7 @@ sub challenge_response_b64($self, $challenge_b64, $salt_b64) {
 
 
 sub send_identify($self, $authentication, $subscriptions) {
+  return $self->log("Can't send Identify, not connected!") unless $self->tx;
   my $opcode = opcode_by_name('Identify');
   my $msg = {
     op => $opcode,
@@ -180,6 +188,7 @@ sub send_identify($self, $authentication, $subscriptions) {
 
 
 sub send_request($self, $request, $data) {
+  return $self->log("Can't send Request $request, not connected!") unless $self->tx;
   my $opcode = opcode_by_name('Request');
   my $id = int rand 10;  #### TODO actual mapping of RequestResponse back to original request, somehow
   my $msg = {
