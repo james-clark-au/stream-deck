@@ -27,6 +27,7 @@ sub get_scene_for_key($self, $key, $act) {
 sub get_key_for_scene($self, $scene) {
   while (my ($key, $value) = each %HARDCODED_CONFIG) {
     if (lc $value eq lc $scene && $key =~ /^(\d+)-(\w+)$/) {
+      keys %HARDCODED_CONFIG;  # explicitly reset 'each'
       return $1, $2;
     }
   }
