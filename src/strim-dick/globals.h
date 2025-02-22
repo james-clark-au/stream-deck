@@ -29,6 +29,7 @@
 #include "BlinkyLed.h"
 #include "PushButton.h"
 #include "SavedScript.h"
+#include "Heartbeat.h"
 
 
 BlinkyLed::BlinkyLed blinky(STATUS_LED, 500);
@@ -37,4 +38,7 @@ BlinkyLed::BlinkyLed leds[NUM_LEDS];
 PushButton::PushButton keys[NUM_KEYS];
 
 SavedScript::SavedScript saved;
+
+Heartbeat::Heartbeat heart(10000);  // 10s
+
 

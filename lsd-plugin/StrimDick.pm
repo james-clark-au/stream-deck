@@ -8,7 +8,7 @@ use LazyCat::LazySerial::Handler::StrimDick::ObsLink;
 
 use JSON;
 has debug => 0;
-has heartbeat => sub { LazyCat::LazySerial::Heartbeat->new(rate_s => 60) };
+has heartbeat => sub { LazyCat::LazySerial::Heartbeat->new(rate_s => 8) };
 has obs => sub { LazyCat::LazySerial::Handler::StrimDick::ObsLink->new() };
 
 my %HARDCODED_CONFIG = (
@@ -100,10 +100,10 @@ sub connected($self) {
   $self->log("connected()") if $self->debug;
   $self->device->send("EYECATCH");
 
-#  $self->heartbeat->handler($self);
-#  $self->heartbeat->resume_fn(sub { $self->device->send("EYECATCH"); $self->set_light(); });
-#  $self->heartbeat->enable();
-#  $self->heartbeat->beat();
+  $self->heartbeat->handler($self);
+  $self->heartbeat->resume_fn(sub { $self->device->send("EYECATCH"); $self->sync_p(); });
+  $self->heartbeat->enable();
+  $self->heartbeat->beat();
 
   $self->obs->connect();
 }

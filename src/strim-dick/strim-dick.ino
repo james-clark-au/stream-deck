@@ -41,6 +41,10 @@ void loop() {
       leds[i].set(LOW);  // Make sure it starts off
     }
   }
+  if (heart.enabled() && ! heart.beating()) {
+    heart.setEnabled(false);
+    cmd_clear(nullptr);
+  }
 
   delay(1);
 }

@@ -219,6 +219,25 @@ void cmd_eyecatch(char *args) {
 }
 
 
+void cmd_heartbeat(char *args) {
+  if (strcasecmp(args, "ON") == 0) {
+    heart.setEnabled(true);
+    Serial.println(F("OK HEARTBEAT ON"));
+
+  } else if (strcasecmp(args, "OFF") == 0) {
+    heart.setEnabled(false);
+    Serial.println(F("OK HEARTBEAT OFF"));
+
+  } else {
+    heart.beat();
+    if (args) {
+      Serial.println(F("OK HEARTBEAT"));
+    }
+  }
+}
+
+
+
 void register_commands() {
   lazy.register_callback("OHAI", &cmd_ohai);
   lazy.register_callback("PINOUT", &cmd_pinout);
@@ -228,6 +247,7 @@ void register_commands() {
   lazy.register_callback("KEY", &cmd_key);
   lazy.register_callback("SAVE", &cmd_save);
   lazy.register_callback("EYECATCH", &cmd_eyecatch);
+  lazy.register_callback("HEARTBEAT", &cmd_heartbeat);
 }
 
 
