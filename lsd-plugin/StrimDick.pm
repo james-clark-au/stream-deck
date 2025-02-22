@@ -48,6 +48,10 @@ sub init($self) {
         $self->device->send("CLEAR");
         $self->device->send("LED $key BLINK");
       }
+    
+    } elsif ($event eq 'ExitStarted') {
+      $self->device->send("CLEAR");
+
     }
   });
   return 1;
@@ -86,7 +90,7 @@ sub handle_input($self, $line) {
       $self->log("$line - no binding");
     }
 
-  } elsif ($line =~ /^OK/) {
+  } elsif ($line =~ /^(OK|OHAI)/) {
     # No need to log
   } else {
     $self->log("unknown input: $line");
