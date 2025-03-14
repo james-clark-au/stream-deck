@@ -2,7 +2,6 @@ import time
 import microcontroller
 import random
 import usb_hid
-import usb_cdc
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_hid.keycode import Keycode
@@ -10,6 +9,7 @@ from adafruit_hid.mouse import Mouse
 from digitalio import DigitalInOut, Pull
 
 from PushButton import PushButton, PushState
+from LazySerial import LazySerial
 
 
 time.sleep(1)
@@ -75,7 +75,8 @@ button = PushButton(touch1, False)
 
 
 toggled_on = False
-last_serial_state = False
+
+lazy = LazySerial()
 
 
 def make_keystrokes(keys, delay):
@@ -170,21 +171,10 @@ def process_buttons():
       keyboard.release_all()
       mouse.release_all()
     
-  
-def process_serial():
-  global last_serial_state
-  if last_serial_state:
-    if not usb_cdc.data.connected:
-      print("Serial data: Disconnected!")
-  else:
-    if usb_cdc.data.connected:
-      print("Serial data: Connected!")
-  last_serial_state = usb_cdc.data.connected
-
 
 print("Starting main loop!")
-usb_cdc.data.write("OK STARTING\n")
+lazy.init()
 while True:
   process_buttons()
-  process_serial()
+  lazy.loop()
 
