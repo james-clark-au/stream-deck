@@ -52,7 +52,6 @@ class LazySerial:
         cmdstring = self.buf
         self.buf = ""
         self.dispatch_command(cmdstring)
-        print("LazySerial: Got command string: "+cmdstring+"\n");
       elif ch == "\r":
         pass  # do nothing, bloody python
       else:
@@ -63,10 +62,8 @@ class LazySerial:
     args = cmdstring.split()
     cmdname = args.pop(0)  # this is 'shift' in normal languages
     if cmdname.upper() in self.commands:  # motherfucking python
-      print("LazySerial: Running command " + cmdname.upper() + "\n")
       self.commands[cmdname.upper()](self, args)
     else:
-      print("LazySerial: No command " + cmdname.upper() + " defined!\n")
       cmd_help(self, args)
       
 
