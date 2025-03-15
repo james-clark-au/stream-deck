@@ -1,36 +1,78 @@
 import usb_cdc
 
-class LazySerial:
-  def __init__(self, output=None):
-    if output:
-      self.output = output
-    else:
-      self.output = usb_cdc.data
-    self.last_serial_state = False
+def cmd_help(lazy, args):
+  lazy.say("ERR Available commands: " + " ".join(lazy.commands.keys()))
 
+class LazySerial:
+  def __init__(self, serial=None):
+    if serial:
+      self.serial = serial
+    else:
+      self.serial = usb_cdc.data
+    self.last_serial_state = False
+    self.commands = {
+      'HELP': cmd_help,
+    }
+    self.buf = ""
+    
 
   def init(self):
+    if self.serial:
+      self.serial.timeout = 0.01
+      self.serial.write_timeout = 0.01
+    else:
+      print("LazySerial: Warning, no serial defined!\n");
     self.say("OK STARTING")
+
+
+  def register(self, cmdname, callback):
+    self.commands[cmdname.upper()] = callback
 
 
   def loop(self):
     self.monitor_connection()
-  
+    self.read_buf()
+    
   
   def monitor_connection(self):
     if self.last_serial_state:
-      if not self.output.connected:
-        print("LazySerial: Disconnected!")
+      if not self.serial.connected:
+        print("LazySerial: Disconnected!\n")
     else:
-      if self.output.connected:
-        print("LazySerial: Connected!")
+      if self.serial.connected:
+        print("LazySerial: Connected!\n")
         self.say("OK CONNECTION ESTABLISHED")
-    self.last_serial_state = self.output.connected
+    self.last_serial_state = self.serial.connected
 
+
+  def read_buf(self):
+    read_bytes = self.serial.read()
+    for ch in read_bytes.decode():
+      if ch == "\n":
+        cmdstring = self.buf
+        self.buf = ""
+        self.dispatch_command(cmdstring)
+        print("LazySerial: Got command string: "+cmdstring+"\n");
+      elif ch == "\r":
+        pass  # do nothing, bloody python
+      else:
+        self.buf = self.buf + ch
+  
+  
+  def dispatch_command(self, cmdstring):
+    args = cmdstring.split()
+    cmdname = args.pop(0)  # this is 'shift' in normal languages
+    if cmdname.upper() in self.commands:  # motherfucking python
+      print("LazySerial: Running command " + cmdname.upper() + "\n")
+      self.commands[cmdname.upper()](self, args)
+    else:
+      print("LazySerial: No command " + cmdname.upper() + " defined!\n")
+      cmd_help(self, args)
+      
 
   def write(self, what):
-    if self.output:
-      self.output.write(what)
+    if self.serial:
+      self.serial.write(what)
 
   def say(self, what):
     self.write(what + "\r\n")
