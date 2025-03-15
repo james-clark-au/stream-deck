@@ -8,11 +8,10 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.mouse import Mouse
 from digitalio import DigitalInOut, Pull
 
+from BlinkyLed import BlinkyLed
 from PushButton import PushButton, PushState
 from LazySerial import LazySerial
 
-
-time.sleep(1)
 
 MODE_SINGLE = 0                # Single shot, fire once at rising edge.
 MODE_TOGGLE = 1                # Single shot, but keeps state LEDs toggling.
@@ -77,6 +76,7 @@ button = PushButton(touch1, False)
 toggled_on = False
 
 lazy = LazySerial()
+blinky = BlinkyLed(microcontroller.pin.GPIO17, 500)
 
 
 def make_keystrokes(keys, delay):
@@ -177,4 +177,4 @@ lazy.init()
 while True:
   process_buttons()
   lazy.loop()
-
+  blinky.loop()
