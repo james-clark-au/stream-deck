@@ -1,13 +1,12 @@
 # Here we define assorted classes to associate with each button, to declare how it should be actioned.
 from PushButton import PushState
+from Behaviour import Behaviour
 
-class SimpleButton:
+class SimpleButton(Behaviour):
   def __init__(self, light_while_pressed=True):
     self.light_while_pressed = light_while_pressed
   
-  # Called by StrimDick
-  def attached(self, dick, idx):
-    self.led = dick.leds[idx]
+  def on_attached(self):
     self.led.value = not self.light_while_pressed
   
   def push_state(self, state):
@@ -18,14 +17,11 @@ class SimpleButton:
         self.led.value = False
 
 
-class RadioButton:
+class RadioButton(Behaviour):
   def __init__(self, group=()):
     self.group = group
   
-  # Called by StrimDick
-  def attached(self, dick, idx):
-    self.dick = dick
-    self.led = dick.leds[idx]
+  def on_attached(self):
     self.led.value = False
   
   def push_state(self, state):
