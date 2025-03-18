@@ -15,6 +15,7 @@ class Behaviour:
   
   # attached() is called by StrimDick as it pulls the config in.
   def attached(self, dick, idx):
+    self.dick = dick
     self.idx = idx
     self.button = dick.buttons[idx]
     self.led = dick.leds[idx]
