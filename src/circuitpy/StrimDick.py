@@ -18,7 +18,11 @@ class StrimDick:
     self.add_button(microcontroller.pin.GPIO6, microcontroller.pin.GPIO23)
     self.add_button(microcontroller.pin.GPIO7, microcontroller.pin.GPIO20)
     self.add_button(microcontroller.pin.GPIO8, microcontroller.pin.GPIO22)
-  
+    for idx, button in enumerate(self.buttons):
+      if idx in self.config:
+        behaviour = self.config[idx]
+        behaviour.attached(self, idx)
+
   
   def add_button(self, sw_pin, led_pin):
     sw_io = DigitalInOut(sw_pin)
@@ -40,8 +44,11 @@ class StrimDick:
   
 
   def loop(self):
-    for button in self.buttons:
-      press_state = button.loop()    
+    for idx, button in enumerate(self.buttons):
+      state = button.loop()
+      if idx in self.config:
+        behaviour = self.config[idx]
+        behaviour.push_state(state)
 
 
   def eyecatch(self, dir=1):

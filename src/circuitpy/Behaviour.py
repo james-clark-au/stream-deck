@@ -20,4 +20,8 @@ class Behaviour:
     self.led = dick.leds[idx]
     self.on_attached()
   
+  # for you to call in your handler, if you want serial events for keypresses
+  # e.g. action might be CLICKED or HELD or whatever you need.
+  def emit(self, action):
+    self.dick.lazy.say("INPUT KEY {} {}".format(self.idx, action))
 

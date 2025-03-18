@@ -24,6 +24,22 @@ def sendkeys(keys):
     keyboard.press(*keys)
     keyboard.release(*keys)
 
+def holdkeys(keys):
+  if isinstance(keys, str):  # What are you doing?
+    keyboard_layout.write(keys)
+  elif isinstance(keys, int):
+    keyboard.press(keys)
+  elif isinstance(keys, (list, tuple)):
+    keyboard.press(*keys)
+
+def releasekeys(keys):
+  if isinstance(keys, str):  # WHAT are you doing?
+    pass
+  elif isinstance(keys, int):
+    keyboard.release(keys)
+  elif isinstance(keys, (list, tuple)):
+    keyboard.release(*keys)
+  
 # e.g. Mouse.LEFT_BUTTON
 def sendmouse(button):
   mouse.click(button)
