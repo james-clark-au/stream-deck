@@ -8,7 +8,7 @@ import usb_cdc
 HIDE_CIRCUITPY_DRIVE = False
 
 # hackily check SW0 to see if it's being held down at boot.
-sw0 = DigitalInOut(microcontroller.pin.GPIO11)   #### FIXME
+sw0 = DigitalInOut(microcontroller.pin.GPIO3)
 sw0.switch_to_input(pull=Pull.UP)
 
 
