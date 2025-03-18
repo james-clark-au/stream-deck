@@ -12,16 +12,16 @@ class SimpleButton(Behaviour):
     self.light_while_pressed = light_while_pressed
   
   def on_attached(self):
-    self.led.value = not self.light_while_pressed
+    self.led.set_onoff(not self.light_while_pressed)
   
   def push_state(self, state):
     if self.light_while_pressed:
       if state == PushState.PRESSED:
-        self.led.value = True
+        self.led.on()
         self.emit("CLICKED")
         holdkeys(self.key)
       elif state == PushState.RELEASED:
-        self.led.value = False
+        self.led.off()
         releasekeys(self.key)
 
 
@@ -34,12 +34,12 @@ class ToggleButton(Behaviour):
     self.led_initial = led_initial
   
   def on_attached(self):
-    self.led.value = self.led_initial
+    self.led.set_onoff(self.led_initial)
   
   def push_state(self, state):
     if state == PushState.PRESSED:
-      self.led.value = not self.led.value
-      if self.led.value:
+      self.led.toggle()
+      if self.led.mode == BlinkyLed.ON:
         self.emit("TOGGLED ON")
         sendkeys(self.key_on)
       else:
@@ -55,13 +55,13 @@ class RadioButton(Behaviour):
     self.group = group
   
   def on_attached(self):
-    self.led.value = False
+    self.led.off()
   
   def push_state(self, state):
     if state == PushState.PRESSED:
       for i in self.group:
         self.dick.leds[i].value = False
-      self.led.value = True
+      self.led.on()
       self.emit("CLICKED")
       holdkeys(self.key)
     elif state == PushState.RELEASED:
@@ -78,13 +78,13 @@ class RadioButtonWithHold(Behaviour):
     self.group = group
   
   def on_attached(self):
-    self.led.value = False
+    self.led.off()
   
   def push_state(self, state):
     if state == PushState.PRESSED:
       for i in self.group:
         self.dick.leds[i].value = False
-      self.led.value = True
+      self.led.on()
     elif state == PushState.RELEASED:
       self.emit("CLICKED")
       sendkeys(self.key)
@@ -92,6 +92,6 @@ class RadioButtonWithHold(Behaviour):
       self.button.cancel()  # Don't also emit a 'released'
       self.emit("HELD")
       sendkeys(self.key_when_held)
-      #### TODO led blink
+      self.led.blink()
         
 

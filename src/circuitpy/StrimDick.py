@@ -4,6 +4,7 @@ import microcontroller
 from digitalio import DigitalInOut, Pull
 
 from PushButton import PushButton, PushState
+from BlinkyLed import BlinkyLed
 
 
 class StrimDick:
@@ -28,19 +29,17 @@ class StrimDick:
     sw_io = DigitalInOut(sw_pin)
     sw_io.switch_to_input(pull=Pull.UP)
     self.buttons.append(PushButton(sw_io, False))
-    led_io = DigitalInOut(led_pin)
-    led_io.switch_to_output()
-    self.leds.append(led_io)
+    self.leds.append(BlinkyLed(led_pin, 500))
   
   
   def set_leds(self, value):
     for led in self.leds:
-      led.value = value
+      led.set_onoff(value)
   
   
   def set_only_led(self, idx):
     self.set_leds(False)
-    self.leds[idx].value = True
+    self.leds[idx].on()
   
 
   def loop(self):

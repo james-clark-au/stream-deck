@@ -24,6 +24,7 @@ config = {
 
 lazy = LazySerial()
 blinky = BlinkyLed(microcontroller.pin.GPIO17, 500)
+blinky.blink()
 dick = StrimDick(lazy, config)
 
 
