@@ -28,6 +28,10 @@ dick = StrimDick(lazy, config)
 
 
 # Serial commands
+def cmd_ohai(lazy, args):
+  lazy.say("OHAI circuitpy-strim-dick 1.0")
+lazy.register("OHAI", cmd_ohai)
+
 def cmd_eyecatch(lazy, args):
   dick.eyecatch()
   lazy.say("OK EYECATCH")

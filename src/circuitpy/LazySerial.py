@@ -1,3 +1,5 @@
+# LazySerial command console.
+# You need to connect to /dev/ttyACM1, 9600 baud, line endings CR/LF or just LF, and pull DTR high.
 import usb_cdc
 
 def cmd_help(lazy, args):
