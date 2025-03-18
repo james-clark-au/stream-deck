@@ -39,12 +39,12 @@ class ToggleButton(Behaviour):
   def push_state(self, state):
     if state == PushState.PRESSED:
       self.led.value = not self.led.value
-        if self.led.value:
-          self.emit("TOGGLED ON")
-          sendkeys(self.key_on)
-        else:
-          self.emit("TOGGLED OFF")
-          sendkeys(self.key_off)
+      if self.led.value:
+        self.emit("TOGGLED ON")
+        sendkeys(self.key_on)
+      else:
+        self.emit("TOGGLED OFF")
+        sendkeys(self.key_off)
 
 
 # Send key while pushed. (release key when button is)
@@ -58,15 +58,14 @@ class RadioButton(Behaviour):
     self.led.value = False
   
   def push_state(self, state):
-    if self.light_while_pressed:
-      if state == PushState.PRESSED:
-        for i in self.group:
-          self.dick.leds[i].value = False
-        self.led.value = True
-        self.emit("CLICKED")
-        holdkeys(self.key)
-      elif state == PushState.RELEASED:
-        releasekeys(self.key)
+    if state == PushState.PRESSED:
+      for i in self.group:
+        self.dick.leds[i].value = False
+      self.led.value = True
+      self.emit("CLICKED")
+      holdkeys(self.key)
+    elif state == PushState.RELEASED:
+      releasekeys(self.key)
 
 
 # *Tap* key after button is released.
@@ -82,18 +81,17 @@ class RadioButtonWithHold(Behaviour):
     self.led.value = False
   
   def push_state(self, state):
-    if self.light_while_pressed:
-      if state == PushState.PRESSED:
-        for i in self.group:
-          self.dick.leds[i].value = False
-        self.led.value = True
-      elif state == PushState.RELEASED:
-        self.emit("CLICKED")
-        sendkeys(self.key)
-      elif state == PushState.HELD and self.button.last_hold_time > 1000:
-        self.button.cancel()  # Don't also emit a 'released'
-        self.emit("HELD")
-        sendkeys(self.key_when_held)
-        #### TODO led blink
+    if state == PushState.PRESSED:
+      for i in self.group:
+        self.dick.leds[i].value = False
+      self.led.value = True
+    elif state == PushState.RELEASED:
+      self.emit("CLICKED")
+      sendkeys(self.key)
+    elif state == PushState.HELD and self.button.last_hold_time > 1000:
+      self.button.cancel()  # Don't also emit a 'released'
+      self.emit("HELD")
+      sendkeys(self.key_when_held)
+      #### TODO led blink
         
 

@@ -60,7 +60,7 @@ class LazySerial:
   
   def dispatch_command(self, cmdstring):
     args = cmdstring.split()
-    cmdname = args.pop(0)  # this is 'shift' in normal languages
+    cmdname = args.pop(0) if len(args) else ''  # this is 'shift' in normal languages, with a pythony-ternary to protect against IndexError
     if cmdname.upper() in self.commands:  # motherfucking python
       self.commands[cmdname.upper()](self, args)
     else:
