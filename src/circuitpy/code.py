@@ -43,6 +43,40 @@ def cmd_clear(lazy, args):
   lazy.say("OK CLEAR")
 lazy.register("CLEAR", cmd_clear)
 
+def usage_led(lazy):
+  lazy.say("ERR Usage: LED <num> (ON|OFF|ONLY|BLINK)")
+  
+def cmd_led(lazy, args):
+  if len(args) == 0:
+    return usage_led(lazy)
+  num = 0
+  try:
+    num = int(args.pop(0))
+  except ValueError:
+    return usage_led(lazy)
+  if num < 0 or num >= len(dick.leds):
+    lazy.say("ERR num must be 0..^{}".format(len(dick.leds)))
+    return
+  if len(args) == 0:
+    return usage_led(lazy)
+  
+  verb = args.pop(0).upper()
+  if verb == "OFF":
+    dick.leds[num].off()
+    lazy.say("OK LED {} {}".format(num, verb))
+  elif verb == "ON":
+    dick.leds[num].on()
+    lazy.say("OK LED {} {}".format(num, verb))
+  elif verb == "ONLY":
+    dick.set_only_led(num)
+    lazy.say("OK LED {} {}".format(num, verb))
+  elif verb == "BLINK":
+    dick.leds[num].blink()
+    lazy.say("OK LED {} {}".format(num, verb))
+  else:
+    return usage_led(lazy)
+lazy.register("LED", cmd_led)
+
 
 # Let's go!
 print("Starting main loop!")
