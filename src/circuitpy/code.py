@@ -8,11 +8,18 @@ from adafruit_hid.mouse import Mouse
 
 from BlinkyLed import BlinkyLed
 from PushButton import PushButton, PushState
+from Heartbeat import Heartbeat
 from LazySerial import LazySerial
 from StrimDick import StrimDick
 from Behaviours import *
 
-# Here we define what we actually want each key to do
+############################################ CONFIG ################################################
+# Here we define what we actually want each key to do. Associate keys 0-5 with a Behaviour,
+# various types defined in Behaviours.py. Values for 'key' parameters can be a Keycode value,
+# from https://docs.circuitpython.org/projects/hid/en/latest/api.html#adafruit_hid.keycode.Keycode
+# or a Tuple of several Keycode values for a chorded sequence, or a string literal for some text
+# to type. None should also work, if you just want a key to send a serial console message.
+####################################################################################################
 config = {
   0: RadioButton(key=(Keycode.GUI, Keycode.Q), group=(0, 1, 2)),
   1: RadioButton(key=(Keycode.GUI, Keycode.R), group=(0, 1, 2)),
@@ -22,13 +29,20 @@ config = {
   5: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(5, 6)),
 }
 
+
+############################################ GLOBALS ###############################################
 lazy = LazySerial()
 blinky = BlinkyLed(microcontroller.pin.GPIO17, 500)
 blinky.blink()
+heart = Heartbeat(10000)
 dick = StrimDick(lazy, config)
 
 
-# Serial commands
+######################################### SERIAL COMMANDS ##########################################
+# These are commands you can use on the serial interface (e.g. /dev/ttyACM1) to receive key input
+# and control LEDs yourself via a program on the host, if you choose.
+# Not to be confused with the CircuitPython REPL that also exists (on e.g. /dev/ttyACM0)
+####################################################################################################
 def cmd_ohai(lazy, args):
   lazy.say("OHAI circuitpy-strim-dick 1.0")
 lazy.register("OHAI", cmd_ohai)
@@ -77,8 +91,26 @@ def cmd_led(lazy, args):
     return usage_led(lazy)
 lazy.register("LED", cmd_led)
 
+def cmd_heartbeat(lazy, args):
+  if len(args) == 0:
+    heart.beat()
+    lazy.say("OK HEARTBEAT")
+    return
+  verb = args.pop(0).upper()
+  if verb == "ON":
+    heart.set_enabled(True)
+    lazy.say("OK HEARTBEAT ON")
+  elif verb == "OFF":
+    heart.set_enabled(False)
+    lazy.say("OK HEARTBEAT OFF")
+  else:
+    heart.beat()
+    lazy.say("OK HEARTBEAT")
+lazy.register("HEARTBEAT", cmd_heartbeat)
 
-# Let's go!
+
+
+############################################# MAIN LOOP ############################################
 print("Starting main loop!")
 lazy.init()
 dick.eyecatch()
@@ -87,3 +119,8 @@ while True:
   dick.loop()
   lazy.loop()
   blinky.loop()
+  if heart.enabled() and not heart.beating():
+    print("Heartbeat stopped, clearing LEDs!")
+    heart.set_enabled(False)
+    dick.set_leds(False)
+
