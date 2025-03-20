@@ -1,7 +1,4 @@
-import time
 import microcontroller
-import random
-from digitalio import DigitalInOut, Pull
 # adafruit_hid is a separate library you need to get from the circuitpy site and drop in lib/
 from adafruit_hid.keycode import Keycode
 from adafruit_hid.mouse import Mouse
