@@ -50,6 +50,28 @@ class ToggleButton(Behaviour):
         sendkeys(self.key_off)
 
 
+# *Tap* key_on when pressed down. Taps the alternate key when released.
+# Starts with LED off (optionally, on), toggles LED state while held.
+class MomentaryButton(Behaviour):
+  def __init__(self, key_on=None, key_off=None, led_initial=False):
+    self.key_on = key_on
+    self.key_off = key_off
+    self.led_initial = led_initial
+  
+  def on_attached(self):
+    self.led.set_onoff(self.led_initial)
+  
+  def push_state(self, state):
+    if state == PushState.PRESSED:
+      self.led.set_onoff(not self.led_initial)
+      self.emit("PRESSED")
+      sendkeys(self.key_on)
+    elif state == PushState.RELEASED:
+      self.led.set_onoff(self.led_initial)
+      self.emit("RELEASED")
+      sendkeys(self.key_off)
+
+
 # Send key while pushed. (release key when button is)
 # Light follows whichever button in the group was pushed last.
 class RadioButton(Behaviour):

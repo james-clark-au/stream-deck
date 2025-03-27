@@ -26,9 +26,9 @@ config_mode0 = {
   5: ModeSwitch(),
 }
 config_mode1 = {
-  0: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(0, 1, 2)),
-  1: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(0, 1, 2)),
-  2: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.THREE), key_when_held="Bargh", group=(0, 1, 2)),
+  0: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(0, 1)),
+  1: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(0, 1)),
+  2: MomentaryButton(key_on=(Keycode.GUI, Keycode.V), key_off=(Keycode.GUI, Keycode.V), led_initial=False),
   3: ToggleButton(key_on=(Keycode.GUI, Keycode.V), key_off=(Keycode.GUI, Keycode.V), led_initial=True),
   4: ToggleButton(key_on="Bed goes up", key_off="Bed goes down"),
   5: ModeSwitch(),
