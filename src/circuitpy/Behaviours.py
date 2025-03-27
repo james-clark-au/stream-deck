@@ -91,6 +91,7 @@ class RadioButtonWithHold(Behaviour):
     elif state == PushState.HELD and self.button.last_hold_time > 1000:
       self.button.cancel()  # Don't also emit a 'released'
       self.emit("HELD")
+      self.led.off()
       sendkeys(self.key_when_held)
       self.led.blink()
         

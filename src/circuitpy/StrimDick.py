@@ -86,6 +86,8 @@ class StrimDick:
       if idx in self.config:
         behaviour = self.config[idx]
         behaviour.push_state(state)
+    for idx, led in enumerate(self.leds):
+      led.loop()
 
 
   def eyecatch(self, dir=1):
