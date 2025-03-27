@@ -49,7 +49,7 @@ class PushButton:
     if measurement:
       # Still pushed, still holding
       if self.latch:
-        self.last_hold_time = current_time_ms
+        self.last_hold_time = current_time_ms - self.pressed_at
         if self.want_cancel:
           return PushState.CANCELLED
         return PushState.HELD
