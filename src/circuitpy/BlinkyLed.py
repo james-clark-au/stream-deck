@@ -47,8 +47,10 @@ class BlinkyLed:
   def toggle(self):
     if self.mode == BlinkyLed.OFF:
       self.on()
+      return True
     else:
       self.off()
+      return False
   
   
   def loop(self):

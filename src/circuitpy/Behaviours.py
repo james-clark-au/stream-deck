@@ -1,5 +1,6 @@
 # Here we define assorted classes to associate with each button, to declare how it should be actioned.
 from PushButton import PushState
+from BlinkyLed import BlinkyLed
 from Behaviour import Behaviour
 from Keeb import sendkeys, holdkeys, releasekeys
 
@@ -15,14 +16,15 @@ class SimpleButton(Behaviour):
     self.led.set_onoff(not self.light_while_pressed)
   
   def push_state(self, state):
-    if self.light_while_pressed:
-      if state == PushState.PRESSED:
+    if state == PushState.PRESSED:
+      if self.light_while_pressed:
         self.led.on()
-        self.emit("CLICKED")
-        holdkeys(self.key)
-      elif state == PushState.RELEASED:
+      self.emit("CLICKED")
+      holdkeys(self.key)
+    elif state == PushState.RELEASED:
+      if self.light_while_pressed:
         self.led.off()
-        releasekeys(self.key)
+      releasekeys(self.key)
 
 
 # *Tap* key when pushed. Taps the alternate key when pushed again.
@@ -32,14 +34,15 @@ class ToggleButton(Behaviour):
     self.key_on = key_on
     self.key_off = key_off
     self.led_initial = led_initial
+    self.toggled = led_initial
   
   def on_attached(self):
-    self.led.set_onoff(self.led_initial)
+    self.led.set_onoff(self.toggled)
   
   def push_state(self, state):
     if state == PushState.PRESSED:
-      self.led.toggle()
-      if self.led.mode == BlinkyLed.ON:
+      self.toggled = self.led.toggle()
+      if self.toggled:
         self.emit("TOGGLED ON")
         sendkeys(self.key_on)
       else:
@@ -53,9 +56,14 @@ class RadioButton(Behaviour):
   def __init__(self, key=None, group=()):
     self.key = key
     self.group = group
+    self.led_mode = BlinkyLed.OFF
   
   def on_attached(self):
-    self.led.off()
+    self.led.set_mode(self.led_mode)
+  
+  # If a mode switch happens, we need to remember our state.
+  def on_detached(self):
+    self.led_mode = self.led.mode
   
   def push_state(self, state):
     if state == PushState.PRESSED:
@@ -76,9 +84,14 @@ class RadioButtonWithHold(Behaviour):
     self.key = key
     self.key_when_held = key_when_held
     self.group = group
+    self.led_mode = BlinkyLed.OFF
   
   def on_attached(self):
-    self.led.off()
+    self.led.set_mode(self.led_mode)
+  
+  # If a mode switch happens, we need to remember our state.
+  def on_detached(self):
+    self.led_mode = self.led.mode
   
   def push_state(self, state):
     if state == PushState.PRESSED:
@@ -90,9 +103,31 @@ class RadioButtonWithHold(Behaviour):
       sendkeys(self.key)
     elif state == PushState.HELD and self.button.last_hold_time > 1000:
       self.button.cancel()  # Don't also emit a 'released'
-      self.emit("HELD")
       self.led.off()
+      self.emit("HELD")
       sendkeys(self.key_when_held)
       self.led.blink()
-        
 
+
+# Does not send keypresses, just selects a new config mode (assuming there are multiple defined)
+class ModeSwitch(Behaviour):
+  def __init__(self, prev=False, light_while_pressed=True):
+    self.prev = prev
+    self.light_while_pressed = light_while_pressed
+  
+  def on_attached(self):
+    self.led.set_onoff(not self.light_while_pressed)
+  
+  def push_state(self, state):
+    if state == PushState.PRESSED:
+      if self.light_while_pressed:
+        self.led.on()
+    elif state == PushState.RELEASED:
+      if self.light_while_pressed:
+        self.led.off()
+      self.emit("CLICKED")
+      if self.prev:
+        self.dick.prev_mode()
+      else:
+        self.dick.next_mode()
+  

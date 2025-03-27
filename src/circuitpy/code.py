@@ -17,22 +17,29 @@ from Behaviours import *
 # or a Tuple of several Keycode values for a chorded sequence, or a string literal for some text
 # to type. None should also work, if you just want a key to send a serial console message.
 ####################################################################################################
-config = {
+config_mode0 = {
   0: RadioButton(key=(Keycode.GUI, Keycode.Q), group=(0, 1, 2)),
   1: RadioButton(key=(Keycode.GUI, Keycode.R), group=(0, 1, 2)),
   2: RadioButton(key=(Keycode.GUI, Keycode.S), group=(0, 1, 2)),
   3: SimpleButton(key=Keycode.RIGHT_SHIFT),
-  4: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(4, 5)),
-  5: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(4, 5)),
+  4: SimpleButton(key=Keycode.RIGHT_CONTROL),
+  5: ModeSwitch(),
 }
-
+config_mode1 = {
+  0: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(0, 1, 2)),
+  1: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(0, 1, 2)),
+  2: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.THREE), key_when_held="Bargh", group=(0, 1, 2)),
+  3: ToggleButton(key_on=(Keycode.GUI, Keycode.V), key_off=(Keycode.GUI, Keycode.V), led_initial=True),
+  4: ToggleButton(key_on="Bed goes up", key_off="Bed goes down"),
+  5: ModeSwitch(),
+}
 
 ############################################ GLOBALS ###############################################
 lazy = LazySerial()
 blinky = BlinkyLed(microcontroller.pin.GPIO17, 500)
 blinky.blink()
 heart = Heartbeat(10000)
-dick = StrimDick(lazy, config)
+dick = StrimDick(lazy, [config_mode0, config_mode1])
 
 
 ######################################### SERIAL COMMANDS ##########################################
@@ -105,6 +112,22 @@ def cmd_heartbeat(lazy, args):
     lazy.say("OK HEARTBEAT")
 lazy.register("HEARTBEAT", cmd_heartbeat)
 
+def usage_mode():
+  lazy.say("ERR Usage: MODE <num>")
+def cmd_mode(lazy, args):
+  if len(args) == 0:
+    return usage_led(lazy)
+  num = 0
+  try:
+    num = int(args.pop(0))
+  except ValueError:
+    return usage_led(lazy)
+  if num < 0 or num >= len(dick.modes):
+    lazy.say("ERR num must be 0..^{}".format(len(dick.modes)))
+    return
+  lazy.say("OK MODE {}".format(num))
+  dick.set_mode(num)
+lazy.register("MODE", cmd_mode)
 
 
 ############################################# MAIN LOOP ############################################
