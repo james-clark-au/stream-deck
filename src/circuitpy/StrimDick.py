@@ -38,9 +38,47 @@ class StrimDick:
   
   
   def set_only_led(self, idx):
+    if idx not in range(len(self.leds)):
+      return
     self.set_leds(False)
     self.leds[idx].on()
   
+
+  def led_set_mode(self, idx, mode):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].set_mode(mode)
+  
+  
+  def led_on(self, idx):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].on()
+
+
+  def led_off(self, idx):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].off()
+
+
+  def led_blink(self, idx):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].blink()
+  
+  
+  def led_set_onoff(self, idx, on):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].set_onoff(on)
+  
+  
+  def led_toggle(self, idx):
+    if idx not in range(len(self.leds)):
+      return
+    self.leds[idx].toggle()
+
 
   def loop(self):
     for idx, button in enumerate(self.buttons):

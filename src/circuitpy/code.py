@@ -22,8 +22,8 @@ config = {
   1: RadioButton(key=(Keycode.GUI, Keycode.R), group=(0, 1, 2)),
   2: RadioButton(key=(Keycode.GUI, Keycode.S), group=(0, 1, 2)),
   3: SimpleButton(key=Keycode.RIGHT_SHIFT),
-  4: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(5, 6)),
-  5: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(5, 6)),
+  4: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.ONE), key_when_held="Hello", group=(4, 5)),
+  5: RadioButtonWithHold(key=(Keycode.CONTROL, Keycode.ALT, Keycode.SHIFT, Keycode.TWO), key_when_held="World", group=(4, 5)),
 }
 
 
