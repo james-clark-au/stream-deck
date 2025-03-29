@@ -2,6 +2,7 @@ import microcontroller
 from digitalio import DigitalInOut, Pull
 import storage
 import usb_cdc
+import usb_midi
 
 # Set to True to not load up the CIRCUITPY drive at boot.
 # If you want to edit code again, you'll have to hold down Switch 0 as you plug it in.
@@ -23,3 +24,6 @@ if HIDE_CIRCUITPY_DRIVE:
 
 usb_cdc.enable(console=True, data=True)    # console is the Python REPL, data is our own custom serial device.
 
+
+# We also really don't need the MIDI device that's enabled by default.
+usb_midi.disable()
