@@ -11,6 +11,22 @@ keyboard_layout = KeyboardLayoutUS(keyboard)
 mouse = Mouse(usb_hid.devices)
 
 
+class MouseButton:
+  def __init__(self, btn):
+    self.btn = btn
+
+class MouseLeft(MouseButton):
+  def __init__(self):
+    self.btn = Mouse.LEFT_BUTTON
+
+class MouseRight(MouseButton):
+  def __init__(self):
+    self.btn = Mouse.RIGHT_BUTTON
+
+class MouseMiddle(MouseButton):
+  def __init__(self):
+    self.btn = Mouse.MIDDLE_BUTTON
+
 # Call with a string to type that string,
 # Call with a single keycode to tap that keycode, e.g. Keycode.F1  (See https://docs.circuitpython.org/projects/hid/en/latest/api.html#adafruit_hid.keycode.Keycode for full list)
 # Call with a list of keycodes to tap a chorded sequence, e.g. (Keycode.GUI, Keycode.S)
@@ -23,6 +39,9 @@ def sendkeys(keys):
   elif isinstance(keys, (list, tuple)):
     keyboard.press(*keys)
     keyboard.release(*keys)
+  elif isinstance(keys, MouseButton):
+    mouse.press(keys.btn)
+    mouse.release(keys.btn)
 
 def holdkeys(keys):
   if isinstance(keys, str):  # What are you doing?
@@ -31,6 +50,8 @@ def holdkeys(keys):
     keyboard.press(keys)
   elif isinstance(keys, (list, tuple)):
     keyboard.press(*keys)
+  elif isinstance(keys, MouseButton):
+    mouse.press(keys.btn)
 
 def releasekeys(keys):
   if isinstance(keys, str):  # WHAT are you doing?
@@ -39,8 +60,7 @@ def releasekeys(keys):
     keyboard.release(keys)
   elif isinstance(keys, (list, tuple)):
     keyboard.release(*keys)
-  
-# e.g. Mouse.LEFT_BUTTON
-def sendmouse(button):
-  mouse.click(button)
+  elif isinstance(keys, MouseButton):
+    mouse.release(keys.btn)
+
 

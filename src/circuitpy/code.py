@@ -9,6 +9,8 @@ from Heartbeat import Heartbeat
 from LazySerial import LazySerial
 from StrimDick import StrimDick
 from Behaviours import *
+from Keeb import MouseLeft, MouseRight, MouseMiddle
+
 
 ############################################ CONFIG ################################################
 # Here we define what we actually want each key to do. Associate keys 0-5 with a Behaviour,
@@ -22,7 +24,7 @@ config_mode0 = {
   1: RadioButton(key=(Keycode.GUI, Keycode.R), group=(0, 1, 2)),
   2: RadioButton(key=(Keycode.GUI, Keycode.S), group=(0, 1, 2)),
   3: SimpleButton(key=Keycode.RIGHT_SHIFT),
-  4: SimpleButton(key=Keycode.RIGHT_CONTROL),
+  4: SimpleButton(key=MouseLeft()),
   5: ModeSwitch(),
 }
 config_mode1 = {
