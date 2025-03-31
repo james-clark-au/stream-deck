@@ -24,7 +24,7 @@ config_mode0 = {
   1: RadioButton(key=(Keycode.GUI, Keycode.R), group=(0, 1, 2)),
   2: RadioButton(key=(Keycode.GUI, Keycode.S), group=(0, 1, 2)),
   3: SimpleButton(key=Keycode.RIGHT_SHIFT),
-  4: SpamButton(key=MouseLeft(), delay_ms=10),
+  4: SpamButton(key=MouseLeft(), delay_ms=30),
   5: ModeSwitch(),
 }
 config_mode1 = {
