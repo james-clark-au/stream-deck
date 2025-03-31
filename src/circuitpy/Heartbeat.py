@@ -1,7 +1,5 @@
-import time
+from Helpers import *
 
-def millis():
-  return time.monotonic() * 1000
 
 class Heartbeat:
   def __init__(self, timeout_ms):

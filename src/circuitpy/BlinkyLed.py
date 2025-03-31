@@ -1,8 +1,6 @@
-import time
+from Helpers import *
 from digitalio import DigitalInOut, Pull
 
-def millis():
-  return time.monotonic() * 1000
 
 class BlinkyLed:
   OFF = 0

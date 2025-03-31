@@ -3,6 +3,7 @@ from PushButton import PushState
 from BlinkyLed import BlinkyLed
 from Behaviour import Behaviour
 from Keeb import sendkeys, holdkeys, releasekeys
+from Helpers import *
 
 
 # Send key while pushed. (release key when button is)
@@ -129,6 +130,46 @@ class RadioButtonWithHold(Behaviour):
       self.emit("HELD")
       sendkeys(self.key_when_held)
       self.led.blink()
+
+
+# Repeatedly tap key while pushed. (release key when button is)
+# Light up while doing so (or, be on all the time)
+class SpamButton(Behaviour):
+  def __init__(self, key=None, light_while_pressed=True, delay_ms=20):
+    self.key = key
+    self.light_while_pressed = light_while_pressed
+    self.delay_ms = delay_ms
+    self.flipflop = False
+    self.lastflip = 0
+  
+  def on_attached(self):
+    self.led.set_onoff(not self.light_while_pressed)
+  
+  def on_detached(self):
+    if self.flipflop:
+      releasekeys(self.key)
+      self.flipflop = False
+  
+  def push_state(self, state):
+    if state == PushState.PRESSED:
+      if self.light_while_pressed:
+        self.led.on()
+      self.emit("SPAMMING START")
+    elif state == PushState.RELEASED:
+      self.led.set_onoff(not self.light_while_pressed)
+      releasekeys(self.key)
+      self.emit("SPAMMING OVER")
+    elif state == PushState.HELD:
+      # pew pew pew pew pew
+      delta = millis() - self.lastflip
+      if delta > self.delay_ms:
+        self.lastflip = millis()
+        self.flipflop = not self.flipflop
+        self.led.set_onoff(self.flipflop)
+        if self.flipflop:
+          holdkeys(self.key)
+        else:
+          releasekeys(self.key)
 
 
 # Does not send keypresses, just selects a new config mode (assuming there are multiple defined)

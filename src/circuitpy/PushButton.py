@@ -1,9 +1,8 @@
-import time
+from Helpers import *
+
 
 DEBOUNCE_TIME_MS = 20
 
-def millis():
-  return time.monotonic() * 1000
 
 # enum hack
 class PushState:

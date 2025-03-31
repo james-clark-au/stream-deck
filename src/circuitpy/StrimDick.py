@@ -1,14 +1,10 @@
 # Holds hardware configuration of our 6 buttons and LEDs, lets you add behaviours
-import time
 import microcontroller
 from digitalio import DigitalInOut, Pull
 
 from PushButton import PushButton, PushState
 from BlinkyLed import BlinkyLed
-
-
-def snooze(ms):
-  time.sleep(ms / 1000)
+from Helpers import *
 
 
 class StrimDick:
