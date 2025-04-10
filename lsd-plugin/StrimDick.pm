@@ -39,6 +39,8 @@ sub get_key_for_scene($self, $scene) {
 
 sub init($self) {
   $self->log("init()");
+  
+  # React to OBS events
   $self->obs->on(event => sub ($obs, $event, $event_data) {
     if ($event eq 'CurrentProgramSceneChanged') {
       $self->set_led_for_scene($event_data->{sceneName});

@@ -19,6 +19,7 @@ has ua => sub { Mojo::UserAgent->new };
 has tx => undef;  # Mojo::Transaction::Websocket
 has attempt => 0;
 has keepalive_tid => undef;
+has log_to_stderr => 1;
 
 
 # Synced from OBS
@@ -57,7 +58,8 @@ sub next_id() {
 
 
 sub log($self, @what) {
-  say STDERR colored("[OBS]", 'bold bright_green') . " " . colored(join(' ', @what), 'green');
+  $self->emit(log => join(' ', @what));
+  say STDERR colored("[OBS]", 'bold bright_green') . " " . colored(join(' ', @what), 'green') if $self->log_to_stderr;
 }
 
 
@@ -203,7 +205,7 @@ sub challenge_response_b64($self, $challenge_b64, $salt_b64) {
 
 
 sub send_identify($self, $authentication, $subscriptions) {
-  return $self->log("Can't send Identify, not connected!") unless $self->tx;
+  croak "Can't send Identify, not connected!" unless $self->tx;
   my $opcode = opcode_by_name('Identify');
   my $msg = {
     op => $opcode,
@@ -220,7 +222,7 @@ sub send_identify($self, $authentication, $subscriptions) {
 
 
 async send_request_p => sub ($self, $request, $data) {
-  return $self->log("Can't send Request $request, not connected!") unless $self->tx;
+  croak "Can't send Request $request, not connected!" unless $self->tx;
   my $opcode = opcode_by_name('Request');
   my $id = next_id();
   my $msg = {
@@ -241,7 +243,9 @@ async send_request_p => sub ($self, $request, $data) {
 
 sub send_request($self, $request, $data) {
   # Fire and forget
-  $self->send_request_p($request, $data);
+  $self->send_request_p($request, $data)->catch(sub ($err) {
+    $self->log("[ERR] send_request($request) failed with no error handler set: $err");
+  });
 }
 
 
