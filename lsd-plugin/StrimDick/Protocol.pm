@@ -38,7 +38,7 @@ sub eventsub_id_by_name($self, $name) {
 sub eventsubs_mask($self, @events) {
   my $mask = 0;
   foreach my $event (@events) {
-    $mask |= eventsub_id_by_name($event);
+    $mask |= $self->eventsub_id_by_name($event);
   }
   return $mask;
 }
