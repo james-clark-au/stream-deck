@@ -7,19 +7,23 @@ use Mojo::Promise;
 use Mojo::UserAgent;
 use Mojo::JSON qw/decode_json encode_json/;
 use Term::ANSIColor;
-use List::MoreUtils qw/firstidx/;
 use Carp;
 use Digest::SHA 'sha256_base64';
 
+use LazyCat::LazySerial::Handler::StrimDick::Protocol;
+my $PROTO = LazyCat::LazySerial::Handler::StrimDick::Protocol->new;
 
+
+# Parameters you can override in ->new()
 has secret => "Oh-BS!";
 has url => "ws://localhost:4455";
-has debug => 1;
+has log_to_stderr => 1;
+
+# Internal state
 has ua => sub { Mojo::UserAgent->new };
 has tx => undef;  # Mojo::Transaction::Websocket
 has attempt => 0;
 has keepalive_tid => undef;
-has log_to_stderr => 1;
 
 
 # Synced from OBS
@@ -28,27 +32,6 @@ has scenes => sub { [] };
 # Hash of id => Promise
 has pending_requests => sub { {} };
 
-
-my @OPCODES = qw/Hello Identify Identified Reidentify 4 Event Request RequestResponse RequestBatch RequestBatchResponse/;
-sub opcode_by_name($name) {
-  my $opcode = firstidx { lc $_ eq lc $name } @OPCODES;
-  croak "Attempt to reference unknown opcode by name '$name'!" if $opcode == -1;
-  return $opcode;
-}
-
-my @EVENTSUBS = qw/General Config Scenes Inputs Transitions Filters Outputs SceneItems MediaInputs Vendors Ui 11 12 13 14 15 InputVolumeMeters InputActiveStateChanged InputShowStateChanged/;
-sub eventsub_by_name($name) {
-  my $eventsub_idx = firstidx { lc $_ eq lc $name } @EVENTSUBS;
-  croak "Attempt to reference unknown eventsub ID by name '$name'!" if $eventsub_idx == -1;
-  return 1 << $eventsub_idx;
-}
-sub eventsubs_mask(@events) {
-  my $mask = 0;
-  foreach my $event (@events) {
-    $mask |= eventsub_by_name($event);
-  }
-  return $mask;
-}
 
 
 sub next_id() {
@@ -135,7 +118,9 @@ sub handle_message($self, $rawmsg) {
     return;
   }
   my $opcode = $msg->{op};
-  my $opname = $OPCODES[$opcode] // "UNKNOWN";
+  my $opname = eval {
+    $PROTO->opcode_name_by_id($opcode);
+  };
   $self->log("==> [$opcode $opname] $rawmsg");
   return $self->handle_hello($msg->{d}) if $opname eq 'Hello';
   return $self->handle_identified($msg->{d}) if $opname eq 'Identified';
@@ -155,7 +140,7 @@ sub handle_hello($self, $data) {
   } else {
     $self->log("No authentication required? okay?");
   }
-  my $mask = eventsubs_mask(qw/General Config Scenes Outputs/);
+  my $mask = $PROTO->eventsubs_mask(qw/General Config Scenes Outputs/);
   $self->send_identify($authentication, $mask);
 }
 
@@ -206,7 +191,7 @@ sub challenge_response_b64($self, $challenge_b64, $salt_b64) {
 
 sub send_identify($self, $authentication, $subscriptions) {
   croak "Can't send Identify, not connected!" unless $self->tx;
-  my $opcode = opcode_by_name('Identify');
+  my $opcode = $PROTO->opcode_id_by_name('Identify');
   my $msg = {
     op => $opcode,
     d => {
@@ -223,7 +208,7 @@ sub send_identify($self, $authentication, $subscriptions) {
 
 async send_request_p => sub ($self, $request, $data) {
   croak "Can't send Request $request, not connected!" unless $self->tx;
-  my $opcode = opcode_by_name('Request');
+  my $opcode = $PROTO->opcode_id_by_name('Request');
   my $id = next_id();
   my $msg = {
     op => $opcode,
