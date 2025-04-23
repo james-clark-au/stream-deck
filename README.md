@@ -2,7 +2,7 @@
 
 I made my own 6-key macropad for streaming out of an old mechanical key 'switch tester' I had! In doing so, I designed and had my very first PCB manufactured!
 
-There's code here for both Arduino C++ _(Using a Nano, and relying on a Perl [lazy-serial-daemon](https://bitbucket.org/jamesneko/lazy-serial-daemon) plugin to respond to the keys)_ and CircuitPython for a TENSTAR RP2040 board that uses the Pro Micro form factor.
+There's code here for both Arduino C++ _(Using a Nano, and relying on a Perl [lazy-serial-daemon](https://github.com/james-clark-au/lazy-serial-daemon) plugin to respond to the keys)_ and CircuitPython for a TENSTAR RP2040 board that uses the Pro Micro form factor.
 
 There's also some 3D printing files - one for the partial enclosure I adapted my switch tester with, one for a full housing for it.
 
