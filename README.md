@@ -6,7 +6,6 @@ There's code here for both Arduino C++ _(Using a Nano, and relying on a Perl [la
 
 There's also some 3D printing files - one for the partial enclosure I adapted my switch tester with, one for a full housing for it.
 
-I made a [video](https://www.youtube.com/watch?v=3drgDwhuff8) about it on my channel.
 
 ## Configuration
 
