@@ -7,7 +7,7 @@ from BlinkyLed import BlinkyLed
 from Helpers import *
 
 
-class StrimDick:
+class StreamDeck:
   def __init__(self, lazy, modes):
     self.buttons = []
     self.leds = []

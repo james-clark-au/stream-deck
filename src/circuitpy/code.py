@@ -7,7 +7,7 @@ from BlinkyLed import BlinkyLed
 from PushButton import PushButton, PushState
 from Heartbeat import Heartbeat
 from LazySerial import LazySerial
-from StrimDick import StrimDick
+from StreamDeck import StreamDeck
 from Behaviours import *
 from Keeb import MouseLeft, MouseRight, MouseMiddle
 
@@ -41,7 +41,7 @@ lazy = LazySerial()
 blinky = BlinkyLed(microcontroller.pin.GPIO17, 500)
 blinky.blink()
 heart = Heartbeat(10000)
-dick = StrimDick(lazy, [config_mode0, config_mode1])
+deck = StreamDeck(lazy, [config_mode0, config_mode1])
 
 
 ######################################### SERIAL COMMANDS ##########################################
@@ -50,16 +50,16 @@ dick = StrimDick(lazy, [config_mode0, config_mode1])
 # Not to be confused with the CircuitPython REPL that also exists (on e.g. /dev/ttyACM0)
 ####################################################################################################
 def cmd_ohai(lazy, args):
-  lazy.say("OHAI circuitpy-strim-dick 1.0")
+  lazy.say("OHAI circuitpy-stream-deck 1.0")
 lazy.register("OHAI", cmd_ohai)
 
 def cmd_eyecatch(lazy, args):
-  dick.eyecatch()
+  deck.eyecatch()
   lazy.say("OK EYECATCH")
 lazy.register("EYECATCH", cmd_eyecatch)
 
 def cmd_clear(lazy, args):
-  dick.set_leds(False)
+  deck.set_leds(False)
   lazy.say("OK CLEAR")
 lazy.register("CLEAR", cmd_clear)
 
@@ -74,24 +74,24 @@ def cmd_led(lazy, args):
     num = int(args.pop(0))
   except ValueError:
     return usage_led(lazy)
-  if num < 0 or num >= len(dick.leds):
-    lazy.say("ERR num must be 0..^{}".format(len(dick.leds)))
+  if num < 0 or num >= len(deck.leds):
+    lazy.say("ERR num must be 0..^{}".format(len(deck.leds)))
     return
   if len(args) == 0:
     return usage_led(lazy)
   
   verb = args.pop(0).upper()
   if verb == "OFF":
-    dick.leds[num].off()
+    deck.leds[num].off()
     lazy.say("OK LED {} {}".format(num, verb))
   elif verb == "ON":
-    dick.leds[num].on()
+    deck.leds[num].on()
     lazy.say("OK LED {} {}".format(num, verb))
   elif verb == "ONLY":
-    dick.set_only_led(num)
+    deck.set_only_led(num)
     lazy.say("OK LED {} {}".format(num, verb))
   elif verb == "BLINK":
-    dick.leds[num].blink()
+    deck.leds[num].blink()
     lazy.say("OK LED {} {}".format(num, verb))
   else:
     return usage_led(lazy)
@@ -124,25 +124,25 @@ def cmd_mode(lazy, args):
     num = int(args.pop(0))
   except ValueError:
     return usage_led(lazy)
-  if num < 0 or num >= len(dick.modes):
-    lazy.say("ERR num must be 0..^{}".format(len(dick.modes)))
+  if num < 0 or num >= len(deck.modes):
+    lazy.say("ERR num must be 0..^{}".format(len(deck.modes)))
     return
   lazy.say("OK MODE {}".format(num))
-  dick.set_mode(num)
+  deck.set_mode(num)
 lazy.register("MODE", cmd_mode)
 
 
 ############################################# MAIN LOOP ############################################
 print("Starting main loop!")
 lazy.init()
-dick.eyecatch()
+deck.eyecatch()
 
 while True:
-  dick.loop()
+  deck.loop()
   lazy.loop()
   blinky.loop()
   if heart.enabled() and not heart.beating():
     print("Heartbeat stopped, clearing LEDs!")
     heart.set_enabled(False)
-    dick.set_leds(False)
+    deck.set_leds(False)
 

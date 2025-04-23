@@ -18,20 +18,20 @@ class Behaviour:
   def push_state(self, state):
     pass
   
-  # attached() is called by StrimDick as it pulls the config in.
-  def attached(self, dick, idx):
-    self.dick = dick
+  # attached() is called by StreamDeck as it pulls the config in.
+  def attached(self, deck, idx):
+    self.deck = deck
     self.idx = idx
-    self.button = dick.buttons[idx]
-    self.led = dick.leds[idx]
+    self.button = deck.buttons[idx]
+    self.led = deck.leds[idx]
     self.on_attached()
   
-  # detached() is called by StrimDick if a mode switch removes a Behaviour from a key.
+  # detached() is called by StreamDeck if a mode switch removes a Behaviour from a key.
   def detached(self):
     self.on_detached()
   
   # for you to call in your handler, if you want serial events for keypresses
   # e.g. action might be CLICKED or HELD or whatever you need.
   def emit(self, action):
-    self.dick.lazy.say("INPUT KEY {} {}".format(self.idx, action))
+    self.deck.lazy.say("INPUT KEY {} {}".format(self.idx, action))
 

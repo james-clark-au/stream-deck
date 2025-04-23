@@ -1,7 +1,7 @@
 #pragma once
 
 #define BAUD_RATE 9600
-#define LAZY_ID "strim-dick 1.0"
+#define LAZY_ID "stream-deck 1.0"
 #define NUM_LEDS 6
 #define NUM_KEYS 6
 #define DEFAULT_BLINK_MS 500

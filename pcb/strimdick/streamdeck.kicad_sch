@@ -2252,7 +2252,7 @@
 			(uuid "174e92ca-2eae-430f-929e-dab1033bc2e2")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "R4")
 					(unit 1)
@@ -2320,7 +2320,7 @@
 			(uuid "5de94361-d7ac-43c1-b173-95ed7bbed67c")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "D6")
 					(unit 1)
@@ -2388,7 +2388,7 @@
 			(uuid "2e41f525-4c90-45e9-a8d9-1cd87387b2b2")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "D2")
 					(unit 1)
@@ -2456,7 +2456,7 @@
 			(uuid "320545b7-b094-480c-b7bc-985e8441fe7e")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "MX2")
 					(unit 1)
@@ -2524,7 +2524,7 @@
 			(uuid "141b3a65-cb69-410d-8495-a5c6d825254e")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "R3")
 					(unit 1)
@@ -2592,7 +2592,7 @@
 			(uuid "06c30466-12f0-4266-8367-cc8dd1df8fa6")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "MX1")
 					(unit 1)
@@ -2660,7 +2660,7 @@
 			(uuid "a503844f-3fec-44aa-a6fe-e32d44658dfe")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "MX3")
 					(unit 1)
@@ -2728,7 +2728,7 @@
 			(uuid "c0534381-92b6-4009-89bd-9bd47847f713")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "D4")
 					(unit 1)
@@ -2796,7 +2796,7 @@
 			(uuid "5437ccd5-1f5d-468e-b1fd-c5892853604b")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "MX5")
 					(unit 1)
@@ -2864,7 +2864,7 @@
 			(uuid "38f690db-f31e-4471-8296-fb1054610f7e")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "R5")
 					(unit 1)
@@ -2932,7 +2932,7 @@
 			(uuid "676b179a-95a2-44e4-973c-ef8940b0d184")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "D5")
 					(unit 1)
@@ -3068,7 +3068,7 @@
 			(uuid "12f26d5c-d986-4d7d-97cc-b9a86a9999c8")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "MX4")
 					(unit 1)
@@ -3288,7 +3288,7 @@
 			(uuid "3d849d26-07e5-4ee5-9ba6-03a2b96556f5")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "D3")
 					(unit 1)
@@ -3356,7 +3356,7 @@
 			(uuid "39f99cf8-25ee-447f-9a0c-4597f2ac7d57")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "R6")
 					(unit 1)
@@ -3490,7 +3490,7 @@
 			(uuid "04096108-30a4-4ff6-ae07-cc2e46d23ffd")
 		)
 		(instances
-			(project "strimdick"
+			(project "streamdeck"
 				(path "/e2f8e7b6-0a13-4122-a7f5-bc56009a9446"
 					(reference "R2")
 					(unit 1)

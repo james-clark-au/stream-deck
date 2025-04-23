@@ -1,15 +1,15 @@
-package LazyCat::LazySerial::Handler::StrimDick;
+package LazyCat::LazySerial::Handler::StreamDeck;
 use Mojo::Base 'LazyCat::LazySerial::Handler', -signatures;
 
 use Mojo::AsyncAwait;
 
 use LazyCat::LazySerial::Heartbeat;
-use LazyCat::LazySerial::Handler::StrimDick::ObsLink;
+use LazyCat::LazySerial::Handler::StreamDeck::ObsLink;
 
 use JSON;
 has debug => 0;
 has heartbeat => sub { LazyCat::LazySerial::Heartbeat->new(rate_s => 8) };
-has obs => sub { LazyCat::LazySerial::Handler::StrimDick::ObsLink->new() };
+has obs => sub { LazyCat::LazySerial::Handler::StreamDeck::ObsLink->new() };
 
 my %HARDCODED_CONFIG = (
   "5-CLICKED" => "Card: Just Chatting",
@@ -66,7 +66,7 @@ sub matches_usb_ids($self, $device) {
 
 
 sub matches_lazy_id($self, $device) {
-  return 1 if $device->lazy_id eq 'strim-dick';
+  return 1 if $device->lazy_id eq 'stream-deck';
   return 0;
 }
 

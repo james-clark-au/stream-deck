@@ -184,7 +184,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/e3018519-fbd3-4e4a-bf7d-b60f2db7a8e4")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -459,7 +459,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/eee9491d-ee68-4d38-977a-d910c73cd8a6")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -734,7 +734,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/0565cf22-a8b8-43ac-8c5e-55527b8e981f")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -1009,7 +1009,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/49390654-4f1c-4bc5-9487-5dd3ab4cbd12")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -1284,7 +1284,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/f1b106e9-75b6-4fc4-ae58-14204ca18709")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -1559,7 +1559,7 @@
 		(property ki_fp_filters "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm*")
 		(path "/794101a2-969c-4257-aa2b-1728c9c2e4b4")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 8.35 -1.37)
@@ -1830,7 +1830,7 @@
 		(property ki_fp_filters "Arduino_Nano_Socket")
 		(path "/b12139bc-36cf-470e-ab51-9a61204ef008")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -8.89 1.18)
@@ -3081,7 +3081,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/bc187653-6eae-4129-af1f-07886d985bda")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -3324,7 +3324,7 @@
 		)
 		(path "/a949dda6-fedf-4e88-819d-39a6a67d7ac6")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -3619,7 +3619,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/07fbb5ce-f7be-4afb-98d9-fa5b64e8d287")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -3862,7 +3862,7 @@
 		)
 		(path "/50ffafcf-fa8b-4658-9f4d-fab9c099afe9")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -4155,7 +4155,7 @@
 		)
 		(path "/70e0a17e-a471-413e-a9d0-63d4254a00bf")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -4450,7 +4450,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/6e2d67c4-38de-4c1c-8552-a0799d2a3879")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -4695,7 +4695,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/fe24d299-19bd-4039-89fb-bc198c6afde5")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -4938,7 +4938,7 @@
 		)
 		(path "/9cf47d01-c786-4823-b97d-fc13ba94e4e6")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -5233,7 +5233,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/3223f823-bb93-43ea-af09-f309ef6862ab")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -5476,7 +5476,7 @@
 		)
 		(path "/3cd33532-a151-4f06-adc7-8685d6dca7c4")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -5769,7 +5769,7 @@
 		)
 		(path "/685770c9-2e11-4f80-bf48-1de67f06ed53")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 9.525)
@@ -6064,7 +6064,7 @@
 		(property ki_fp_filters "LED_D3.0mm_Clear LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm LED_D3.0mm_Horizontal_O3.81mm_Z2.0mm LED_D3.0mm_Horizontal_O6.35mm_Z2.0mm")
 		(path "/79888521-adaa-48b7-9603-19e7d42f608c")
 		(sheetname "Root")
-		(sheetfile "strimdick.kicad_sch")
+		(sheetfile "streamdeck.kicad_sch")
 		(attr through_hole exclude_from_pos_files)
 		(fp_line
 			(start 9.525 14.605)
@@ -6271,7 +6271,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "james_neko's strim dick v1"
+	(gr_text "james_neko's stream deck v1"
 		(at 70.5 31 0)
 		(layer "F.SilkS")
 		(uuid "7e6d2130-2b61-4784-a847-796eeba287df")

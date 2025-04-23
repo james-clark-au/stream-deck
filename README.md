@@ -1,4 +1,4 @@
-# James Neko's Strim Dick
+# James Neko's Stream Deck
 
 I made my own 6-key macropad for streaming out of an old mechanical key 'switch tester' I had! In doing so, I designed and had my very first PCB manufactured!
 
@@ -45,7 +45,7 @@ config_mode1 = {
 
 Slightly below that, those 'modes' are loaded with the line:-
 ```
-dick = StrimDick(lazy, [config_mode0, config_mode1])
+deck = StreamDeck(lazy, [config_mode0, config_mode1])
 ```
 
 You'll only need to modify that if you want to play with lots of different modes; if you just want the same behaviour for each key all the time, edit `config_mode0` and don't worry about anything else.

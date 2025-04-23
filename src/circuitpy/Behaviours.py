@@ -91,7 +91,7 @@ class RadioButton(Behaviour):
   def push_state(self, state):
     if state == PushState.PRESSED:
       for i in self.group:
-        self.dick.led_off(i)
+        self.deck.led_off(i)
       self.led.on()
       self.emit("CLICKED")
       holdkeys(self.key)
@@ -119,7 +119,7 @@ class RadioButtonWithHold(Behaviour):
   def push_state(self, state):
     if state == PushState.PRESSED:
       for i in self.group:
-        self.dick.led_off(i)
+        self.deck.led_off(i)
       self.led.on()
     elif state == PushState.RELEASED:
       self.emit("CLICKED")
@@ -190,7 +190,7 @@ class ModeSwitch(Behaviour):
         self.led.off()
       self.emit("CLICKED")
       if self.prev:
-        self.dick.prev_mode()
+        self.deck.prev_mode()
       else:
-        self.dick.next_mode()
+        self.deck.next_mode()
   
